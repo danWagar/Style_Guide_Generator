@@ -1,0 +1,33 @@
+$header_bg_color: #a8ffbd;
+$header_link_color: #242323;
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.Header_nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.Header_logo_text {
+  width: 100%;
+  text-align: center;
+}
+
+.Header_login {
+  padding-bottom: 10px;
+}
+
+.Header_bg_color {
+  background-color: $header_bg_color;
+}
+
+.Header_link_color {
+  color: $header_link_color;
+}
