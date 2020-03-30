@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 $bg_color: #242323;
-$emphasis_color: #720ff3;
-$emphasis_compliment_color: #e3ffd8;
 $link_color: #ffffff;
 $hx_font: 'Raleway', sans-serif;
 $primary_font: 'Open Sans', sans-serif;
@@ -62,18 +60,6 @@ p {
 
 .primary_font {
   font-family: $primary_font;
-}
-
-.emphasis_bg_color {
-  background-color: $emphasis_color;
-}
-
-.emphasis_color {
-  color: $emphasis_color;
-}
-
-.emphasis_compliment_color {
-  color: $emphasis_compliment_color;
 }
 
 .link_color {
