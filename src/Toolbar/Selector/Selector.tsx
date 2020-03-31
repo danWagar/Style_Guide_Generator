@@ -1,14 +1,23 @@
 import React from 'react';
 import { Props, connector } from '../../reduxPropTypes';
+import styles from '../../styles';
+import CSS from 'csstype';
 import './Selector.css';
-import { changeSelected } from '../../store/action';
 
 const Selector: React.FC<Props> = props => {
   const { selected, changeSelected } = props;
 
+  const style = new styles(props);
+
   const handleHeaderBackgroundSelector = (e: React.MouseEvent<HTMLLIElement>) => {
     console.log(typeof e.currentTarget.dataset.id);
     changeSelected(e.currentTarget.dataset.id);
+  };
+
+  const colorBoxStyle: CSS.Properties = {
+    height: '20px',
+    width: '20px',
+    borderRadius: '5px'
   };
 
   return (
@@ -18,6 +27,7 @@ const Selector: React.FC<Props> = props => {
         onClick={handleHeaderBackgroundSelector}
         data-id="Header Background"
       >
+        <div style={{ ...colorBoxStyle, ...style.getHeaderBGColorStyle() }}></div>
         Header Background
       </li>
       <li
@@ -25,6 +35,7 @@ const Selector: React.FC<Props> = props => {
         onClick={handleHeaderBackgroundSelector}
         data-id="Emphasis"
       >
+        <div style={{ ...colorBoxStyle, ...style.getEmphasisColorStyle() }}></div>
         Emphasis
       </li>
       <li
@@ -32,6 +43,7 @@ const Selector: React.FC<Props> = props => {
         onClick={handleHeaderBackgroundSelector}
         data-id="Emphasis Compliment"
       >
+        <div style={{ ...colorBoxStyle, ...style.getEmphasisComplimentColorStyle() }}></div>
         Emphasis Compliment
       </li>
       <li
@@ -39,6 +51,7 @@ const Selector: React.FC<Props> = props => {
         onClick={handleHeaderBackgroundSelector}
         data-id="Background"
       >
+        <div style={{ ...colorBoxStyle, ...style.getBGColorStyle() }}></div>
         Background
       </li>
       <li
@@ -46,6 +59,7 @@ const Selector: React.FC<Props> = props => {
         onClick={handleHeaderBackgroundSelector}
         data-id="Hx"
       >
+        <div style={{ ...colorBoxStyle, ...style.getHxColorStyle() }}></div>
         Hx
       </li>
       <li
@@ -53,6 +67,7 @@ const Selector: React.FC<Props> = props => {
         onClick={handleHeaderBackgroundSelector}
         data-id="Text"
       >
+        <div style={{ ...colorBoxStyle, ...style.getTextColorStyle() }}></div>
         Text
       </li>
     </ul>

@@ -11,6 +11,13 @@
 }
 
 .Selector_list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 5px;
+}
+
+.Selector_list li div {
+  margin-right: 7px;
 }
 /*# sourceMappingURL=Selector.css.map */
