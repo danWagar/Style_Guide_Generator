@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-
-$bg_color: #242323;
-$link_color: #ffffff;
-$hx_font: 'Raleway', sans-serif;
-$primary_font: 'Open Sans', sans-serif;
-$window_horizontal_padding: 0px 30px 0px 30px;
+@import './variables';
 
 * {
   margin: 0;
@@ -24,6 +19,10 @@ main {
   padding: $window_horizontal_padding;
 }
 
+ul {
+  list-style-type: none;
+}
+
 h1,
 h2,
 h3,
@@ -40,6 +39,10 @@ h1 {
 
 p {
   font-family: $primary_font;
+}
+
+.selected {
+  border: 1px solid blue;
 }
 
 .btn {

@@ -1,41 +1,58 @@
 import React, { useState } from 'react';
-import { connect, ConnectedProps } from 'react-redux';
-import { SketchPicker, ColorChangeHandler } from 'react-color';
+import { Props, connector } from '../reduxPropTypes';
+import { SketchPicker, ColorChangeHandler, HSLColor, RGBColor } from 'react-color';
+import Selector from './Selector/Selector';
 import './Toolbar.css';
 
-interface RootState {
-  headerBGColor: string;
-}
-
-const mapState = (state: RootState) => ({
-  headerBGColor: state.headerBGColor
-});
-
-const mapDispatch = {
-  changeHeaderBGColor: (color: string) => ({ type: 'CHANGE_HEADER_BG_COLOR', payload: color })
-};
-
-const connector = connect(
-  mapState,
-  mapDispatch
-);
-
-type PropsFromRedux = ConnectedProps<typeof connector>;
-
-type Props = PropsFromRedux & {};
-
 const Toolbar: React.FC<Props> = props => {
-  const { headerBGColor, changeHeaderBGColor } = props;
-  console.log(changeHeaderBGColor);
+  const {
+    selected,
+    headerBGColor,
+    emphasisColor,
+    emphasisComplimentColor,
+    changeHeaderBGColor,
+    changeEmphasisColor,
+    changeEmphasisComplimentColor
+  } = props;
+  console.log(headerBGColor);
 
   const handleChangeComplete: ColorChangeHandler = col => {
-    changeHeaderBGColor(col.hex);
+    switch (selected) {
+      case 'Header Background':
+        changeHeaderBGColor(col.hex);
+        return;
+      case 'Emphasis':
+        changeEmphasisColor(col.hex);
+        return;
+      case 'Emphasis Compliment':
+        changeEmphasisComplimentColor(col.hex);
+        return;
+      default:
+        return;
+    }
   };
 
+  const getSelectedColor = () => {
+    switch (selected) {
+      case 'Header Background':
+        return headerBGColor;
+      case 'Emphasis':
+        return emphasisColor;
+      case 'Emphasis Compliment':
+        return emphasisComplimentColor;
+      default:
+        return '#fff';
+    }
+  };
+
+  console.log('selected is ' + selected);
+  const blah = getSelectedColor();
+  console.log(blah);
   return (
     <div className="Toolbar">
+      <Selector />
       <div className="Toolbar_color_picker">
-        <SketchPicker color={headerBGColor} onChangeComplete={handleChangeComplete} />
+        <SketchPicker color={getSelectedColor()} onChangeComplete={handleChangeComplete} />
       </div>
     </div>
   );

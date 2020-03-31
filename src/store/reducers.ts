@@ -1,6 +1,7 @@
 import {
   VisualizerState,
   VisualizerActionTypes,
+  CHANGE_SELECTED,
   CHANGE_HEADER_BG_COLOR,
   CHANGE_EMPHASIS_COLOR,
   CHANGE_EMPHASIS_COMPLIMENT_COLOR
@@ -8,6 +9,7 @@ import {
 import { changeEmphasisComplimentColor } from './action';
 
 const initialState: VisualizerState = {
+  selected: null,
   headerBGColor: '#A8FFBD',
   emphasisColor: '#720ff3',
   emphasisComplimentColor: '#e3ffd8'
@@ -15,6 +17,11 @@ const initialState: VisualizerState = {
 
 export function vizualizerReducer(state = initialState, action: VisualizerActionTypes): VisualizerState {
   switch (action.type) {
+    case CHANGE_SELECTED:
+      return {
+        ...state,
+        selected: action.payload
+      };
     case CHANGE_HEADER_BG_COLOR:
       return {
         ...state,

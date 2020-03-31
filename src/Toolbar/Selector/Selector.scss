@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.Selector_list {
+  display: flex;
+  flex-direction: column;
+  font-family: $primary-font;
+  color: white;
+
+  & li {
+    padding: 5px;
+  }
+}
