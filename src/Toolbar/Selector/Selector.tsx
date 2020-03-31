@@ -1,13 +1,13 @@
 import React from 'react';
 import { Props, connector } from '../../reduxPropTypes';
-import styles from '../../styles';
+import Styles from '../../styles';
 import CSS from 'csstype';
 import './Selector.css';
 
 const Selector: React.FC<Props> = props => {
   const { selected, changeSelected } = props;
 
-  const style = new styles(props);
+  const style = new Styles(props);
 
   const handleHeaderBackgroundSelector = (e: React.MouseEvent<HTMLLIElement>) => {
     console.log(typeof e.currentTarget.dataset.id);
@@ -17,6 +17,7 @@ const Selector: React.FC<Props> = props => {
   const colorBoxStyle: CSS.Properties = {
     height: '20px',
     width: '20px',
+    border: '1px solid #c1c1c1',
     borderRadius: '5px'
   };
 

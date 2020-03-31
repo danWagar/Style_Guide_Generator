@@ -1,7 +1,7 @@
 import { Props } from './reduxPropTypes';
 import { Properties } from 'csstype';
 
-export default class styles {
+export default class Styles {
   headerBGColorStyle!: Properties;
   emphasisColorStyle!: Properties;
   emphasisComplimentColorStyle!: Properties;
