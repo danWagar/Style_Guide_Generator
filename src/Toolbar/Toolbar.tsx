@@ -10,11 +10,16 @@ const Toolbar: React.FC<Props> = props => {
     headerBGColor,
     emphasisColor,
     emphasisComplimentColor,
+    bgColor,
+    hxColor,
+    textColor,
     changeHeaderBGColor,
     changeEmphasisColor,
-    changeEmphasisComplimentColor
+    changeEmphasisComplimentColor,
+    changeBGColor,
+    changeHxColor,
+    changeTextColor
   } = props;
-  console.log(headerBGColor);
 
   const handleChangeComplete: ColorChangeHandler = col => {
     switch (selected) {
@@ -26,6 +31,15 @@ const Toolbar: React.FC<Props> = props => {
         return;
       case 'Emphasis Compliment':
         changeEmphasisComplimentColor(col.hex);
+        return;
+      case 'Background':
+        changeBGColor(col.hex);
+        return;
+      case 'Hx':
+        changeHxColor(col.hex);
+        return;
+      case 'Text':
+        changeTextColor(col.hex);
         return;
       default:
         return;
@@ -40,14 +54,17 @@ const Toolbar: React.FC<Props> = props => {
         return emphasisColor;
       case 'Emphasis Compliment':
         return emphasisComplimentColor;
+      case 'Background':
+        return bgColor;
+      case 'Hx':
+        return hxColor;
+      case 'Text':
+        return textColor;
       default:
         return '#fff';
     }
   };
 
-  console.log('selected is ' + selected);
-  const blah = getSelectedColor();
-  console.log(blah);
   return (
     <div className="Toolbar">
       <Selector />

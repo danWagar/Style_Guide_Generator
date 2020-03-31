@@ -4,7 +4,10 @@ import {
   CHANGE_SELECTED,
   CHANGE_HEADER_BG_COLOR,
   CHANGE_EMPHASIS_COLOR,
-  CHANGE_EMPHASIS_COMPLIMENT_COLOR
+  CHANGE_EMPHASIS_COMPLIMENT_COLOR,
+  CHANGE_BG_COLOR,
+  CHANGE_HX_COLOR,
+  CHANGE_TEXT_COLOR
 } from './types';
 import { changeEmphasisComplimentColor } from './action';
 
@@ -12,7 +15,10 @@ const initialState: VisualizerState = {
   selected: null,
   headerBGColor: '#A8FFBD',
   emphasisColor: '#720ff3',
-  emphasisComplimentColor: '#e3ffd8'
+  emphasisComplimentColor: '#e3ffd8',
+  bgColor: '#242323',
+  hxColor: '#9756ec',
+  textColor: '#9756ec'
 };
 
 export function vizualizerReducer(state = initialState, action: VisualizerActionTypes): VisualizerState {
@@ -37,6 +43,22 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
         ...state,
         emphasisComplimentColor: action.payload
       };
+    case CHANGE_BG_COLOR:
+      return {
+        ...state,
+        bgColor: action.payload
+      };
+    case CHANGE_HX_COLOR:
+      return {
+        ...state,
+        hxColor: action.payload
+      };
+    case CHANGE_TEXT_COLOR:
+      return {
+        ...state,
+        textColor: action.payload
+      };
+
     default:
       return state;
   }

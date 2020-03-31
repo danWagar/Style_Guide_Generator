@@ -5,13 +5,19 @@ interface RootState {
   headerBGColor: string;
   emphasisColor: string;
   emphasisComplimentColor: string;
+  bgColor: string;
+  hxColor: string;
+  textColor: string;
 }
 
 const mapState = (state: RootState) => ({
   selected: state.selected,
   headerBGColor: state.headerBGColor,
   emphasisColor: state.emphasisColor,
-  emphasisComplimentColor: state.emphasisComplimentColor
+  emphasisComplimentColor: state.emphasisComplimentColor,
+  bgColor: state.bgColor,
+  hxColor: state.hxColor,
+  textColor: state.textColor
 });
 
 const mapDispatch = {
@@ -20,6 +26,18 @@ const mapDispatch = {
   changeEmphasisColor: (color: string) => ({ type: 'CHANGE_EMPHASIS_COLOR', payload: color }),
   changeEmphasisComplimentColor: (color: string) => ({
     type: 'CHANGE_EMPHASIS_COMPLIMENT_COLOR',
+    payload: color
+  }),
+  changeBGColor: (color: string) => ({
+    type: 'CHANGE_BG_COLOR',
+    payload: color
+  }),
+  changeHxColor: (color: string) => ({
+    type: 'CHANGE_HX_COLOR',
+    payload: color
+  }),
+  changeTextColor: (color: string) => ({
+    type: 'CHANGE_TEXT_COLOR',
     payload: color
   })
 };

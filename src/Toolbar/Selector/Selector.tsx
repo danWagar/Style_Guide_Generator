@@ -34,6 +34,27 @@ const Selector: React.FC<Props> = props => {
       >
         Emphasis Compliment
       </li>
+      <li
+        className={selected === 'Background' ? 'selected' : ''}
+        onClick={handleHeaderBackgroundSelector}
+        data-id="Background"
+      >
+        Background
+      </li>
+      <li
+        className={selected === 'Hx' ? 'selected' : ''}
+        onClick={handleHeaderBackgroundSelector}
+        data-id="Hx"
+      >
+        Hx
+      </li>
+      <li
+        className={selected === 'Text' ? 'selected' : ''}
+        onClick={handleHeaderBackgroundSelector}
+        data-id="Text"
+      >
+        Text
+      </li>
     </ul>
   );
 };

@@ -10,13 +10,17 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $bg_color;
   font-size: 16px;
+  overflow-y: hidden;
 }
 
 header,
 main {
   padding: $window_horizontal_padding;
+}
+
+main {
+  height: 100vh;
 }
 
 ul {

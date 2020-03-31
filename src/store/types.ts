@@ -4,6 +4,9 @@ export interface VisualizerState {
   headerBGColor?: string;
   emphasisColor?: string;
   emphasisComplimentColor?: string;
+  bgColor?: string;
+  hxColor?: string;
+  textColor?: string;
 }
 
 //Actions
@@ -31,10 +34,31 @@ interface ChangeEmphasisComplimentColorAction {
   payload: string;
 }
 
+export const CHANGE_BG_COLOR = 'CHANGE_BG_COLOR';
+interface ChangeBGColor {
+  type: typeof CHANGE_BG_COLOR;
+  payload: string;
+}
+
+export const CHANGE_HX_COLOR = 'CHANGE_HX_COLOR';
+interface ChangeHxColor {
+  type: typeof CHANGE_HX_COLOR;
+  payload: string;
+}
+
+export const CHANGE_TEXT_COLOR = 'CHANGE_TEXT_COLOR';
+interface ChangeTextColor {
+  type: typeof CHANGE_TEXT_COLOR;
+  payload: string;
+}
+
 export type VisualizerActionTypes =
   | ChangeSelected
   | ChangeHeaderBGColorAction
   | ChangeEmphasisColorAction
-  | ChangeEmphasisComplimentColorAction;
+  | ChangeEmphasisComplimentColorAction
+  | ChangeBGColor
+  | ChangeHxColor
+  | ChangeTextColor;
 
 //
