@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EACZ,WAAW,ECDE,WAAW,EAAE,UAAU;EDEpC,KAAK,EAAE,KAAK;CAMb;;AARD,AAIE,aAJW,CAIT,EAAE,CAAC;EACH,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CAC/B",
+    "sources": [
+        "RecentColors.scss",
+        "../../variables.scss"
+    ],
+    "names": [],
+    "file": "RecentColors.css"
+}

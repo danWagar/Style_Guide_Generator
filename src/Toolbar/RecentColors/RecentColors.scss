@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.RecentColors {
+  font-family: $primary-font;
+  color: white;
+
+  & ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}

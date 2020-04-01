@@ -1,0 +1,14 @@
+.RecentColors {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.RecentColors ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=RecentColors.css.map */

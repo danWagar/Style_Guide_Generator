@@ -4,71 +4,59 @@ import Styles from '../../styles';
 import CSS from 'csstype';
 import './Selector.css';
 
-const Selector: React.FC<Props> = props => {
-  const { selected, changeSelected } = props;
+interface ISelector extends Props {
+  handleSelectedColorChange: (e: React.MouseEvent<HTMLLIElement>) => void;
+}
+
+const Selector: React.FC<ISelector> = props => {
+  const { selected, handleSelectedColorChange } = props;
 
   const style = new Styles(props);
-
-  const handleHeaderBackgroundSelector = (e: React.MouseEvent<HTMLLIElement>) => {
-    console.log(typeof e.currentTarget.dataset.id);
-    changeSelected(e.currentTarget.dataset.id);
-  };
-
-  const colorBoxStyle: CSS.Properties = {
-    height: '20px',
-    width: '20px',
-    border: '1px solid #c1c1c1',
-    borderRadius: '5px'
-  };
 
   return (
     <ul className="Selector_list">
       <li
         className={selected === 'Header Background' ? 'selected' : ''}
-        onClick={handleHeaderBackgroundSelector}
+        onClick={handleSelectedColorChange}
         data-id="Header Background"
       >
-        <div style={{ ...colorBoxStyle, ...style.getHeaderBGColorStyle() }}></div>
+        <div style={{ ...style.getColorBoxStyle(), ...style.getHeaderBGColorStyle() }}></div>
         Header Background
       </li>
       <li
         className={selected === 'Emphasis' ? 'selected' : ''}
-        onClick={handleHeaderBackgroundSelector}
+        onClick={handleSelectedColorChange}
         data-id="Emphasis"
       >
-        <div style={{ ...colorBoxStyle, ...style.getEmphasisColorStyle() }}></div>
+        <div style={{ ...style.getColorBoxStyle(), ...style.getEmphasisColorStyle() }}></div>
         Emphasis
       </li>
       <li
         className={selected === 'Emphasis Compliment' ? 'selected' : ''}
-        onClick={handleHeaderBackgroundSelector}
+        onClick={handleSelectedColorChange}
         data-id="Emphasis Compliment"
       >
-        <div style={{ ...colorBoxStyle, ...style.getEmphasisComplimentColorStyle() }}></div>
+        <div style={{ ...style.getColorBoxStyle(), ...style.getEmphasisComplimentColorStyle() }}></div>
         Emphasis Compliment
       </li>
       <li
         className={selected === 'Background' ? 'selected' : ''}
-        onClick={handleHeaderBackgroundSelector}
+        onClick={handleSelectedColorChange}
         data-id="Background"
       >
-        <div style={{ ...colorBoxStyle, ...style.getBGColorStyle() }}></div>
+        <div style={{ ...style.getColorBoxStyle(), ...style.getBGColorStyle() }}></div>
         Background
       </li>
-      <li
-        className={selected === 'Hx' ? 'selected' : ''}
-        onClick={handleHeaderBackgroundSelector}
-        data-id="Hx"
-      >
-        <div style={{ ...colorBoxStyle, ...style.getHxColorStyle() }}></div>
+      <li className={selected === 'Hx' ? 'selected' : ''} onClick={handleSelectedColorChange} data-id="Hx">
+        <div style={{ ...style.getColorBoxStyle(), ...style.getHxColorStyle() }}></div>
         Hx
       </li>
       <li
         className={selected === 'Text' ? 'selected' : ''}
-        onClick={handleHeaderBackgroundSelector}
+        onClick={handleSelectedColorChange}
         data-id="Text"
       >
-        <div style={{ ...colorBoxStyle, ...style.getTextColorStyle() }}></div>
+        <div style={{ ...style.getColorBoxStyle(), ...style.getTextColorStyle() }}></div>
         Text
       </li>
     </ul>

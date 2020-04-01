@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Props, connector } from '../reduxPropTypes';
-import { SketchPicker, ColorChangeHandler, HSLColor, RGBColor } from 'react-color';
+import { SketchPicker, ColorResult } from 'react-color';
 import Selector from './Selector/Selector';
+import RecentColors from './RecentColors/RecentColors';
 import './Toolbar.css';
 
 const Toolbar: React.FC<Props> = props => {
   const {
     selected,
+    changeSelected,
     headerBGColor,
     emphasisColor,
     emphasisComplimentColor,
@@ -21,7 +23,14 @@ const Toolbar: React.FC<Props> = props => {
     changeTextColor
   } = props;
 
-  const handleChangeComplete: ColorChangeHandler = col => {
+  const initialColors = [bgColor, hxColor, textColor, emphasisColor, emphasisComplimentColor, headerBGColor];
+
+  const [recentColors, setRecentColors] = useState<Array<string>>(initialColors);
+  const [selectedColor, setSelectedColor] = useState<string>('#fff');
+
+  const handleChangeComplete = (col: ColorResult) => {
+    setRecentColors([...recentColors.slice(1, 6), col.hex]);
+    setSelectedColor(col.hex);
     switch (selected) {
       case 'Header Background':
         changeHeaderBGColor(col.hex);
@@ -65,11 +74,21 @@ const Toolbar: React.FC<Props> = props => {
     }
   };
 
+  const handleSelectedColorChange = (e: React.MouseEvent<HTMLLIElement>) => {
+    console.log(typeof e.currentTarget.dataset.id);
+    changeSelected(e.currentTarget.dataset.id);
+  };
+
+  console.log('selected is ' + selected);
+
   return (
     <div className="Toolbar">
-      <Selector />
+      <div className="Toolbar_top">
+        <Selector handleSelectedColorChange={handleSelectedColorChange} />
+        <RecentColors colors={recentColors} handleChangeComplete={handleChangeComplete} />
+      </div>
       <div className="Toolbar_color_picker">
-        <SketchPicker color={getSelectedColor()} onChangeComplete={handleChangeComplete} />
+        <SketchPicker color={selectedColor} onChangeComplete={handleChangeComplete} />
       </div>
     </div>
   );
