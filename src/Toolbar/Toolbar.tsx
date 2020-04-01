@@ -28,8 +28,13 @@ const Toolbar: React.FC<Props> = props => {
   const [recentColors, setRecentColors] = useState<Array<string>>(initialColors);
   const [selectedColor, setSelectedColor] = useState<string>('#fff');
 
+  const generateRecentColors = (col: string) => {
+    if (recentColors.includes(col)) return;
+    setRecentColors([...recentColors.slice(1, 6), col]);
+  };
+
   const handleChangeComplete = (col: ColorResult) => {
-    setRecentColors([...recentColors.slice(1, 6), col.hex]);
+    generateRecentColors(col.hex);
     setSelectedColor(col.hex);
     switch (selected) {
       case 'Header Background':
