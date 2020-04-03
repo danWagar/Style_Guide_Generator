@@ -27,6 +27,7 @@ const Toolbar: React.FC<Props> = props => {
 
   const [recentColors, setRecentColors] = useState<Array<string>>(initialColors);
   const [selectedColor, setSelectedColor] = useState<string>('#fff');
+  const [showToolbar, setShowToolbar] = useState<boolean>(false);
 
   const generateRecentColors = (col: string) => {
     if (recentColors.includes(col)) return;
@@ -84,18 +85,27 @@ const Toolbar: React.FC<Props> = props => {
     changeSelected(e.currentTarget.dataset.id);
   };
 
-  console.log('selected is ' + selected);
+  const toggleHideToolbar = (e: React.MouseEvent<HTMLDivElement>) => {
+    setShowToolbar(!showToolbar);
+  };
 
   return (
-    <div className="Toolbar">
-      <div className="Toolbar_top">
-        <Selector handleSelectedColorChange={handleSelectedColorChange} />
-        <RecentColors colors={recentColors} handleChangeComplete={handleChangeComplete} />
+    <>
+      <div className="Toolbar_toggle" onClick={toggleHideToolbar}>
+        Toolbar
       </div>
-      <div className="Toolbar_color_picker">
-        <SketchPicker color={selectedColor} onChangeComplete={handleChangeComplete} />
-      </div>
-    </div>
+      {!showToolbar && (
+        <div className="Toolbar">
+          <div className="Toolbar_top">
+            <Selector handleSelectedColorChange={handleSelectedColorChange} />
+            <RecentColors colors={recentColors} handleChangeComplete={handleChangeComplete} />
+          </div>
+          <div className="Toolbar_color_picker">
+            <SketchPicker color={selectedColor} onChangeComplete={handleChangeComplete} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

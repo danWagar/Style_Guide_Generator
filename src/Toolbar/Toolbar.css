@@ -2,11 +2,23 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
-  height: 100vh;
-  width: 220px;
+  height: calc(100vh - 20px);
+  width: 100vw;
   background-color: black;
+  z-index: 1;
+}
+
+.Toolbar_toggle {
+  position: fixed;
+  height: 20px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: black;
+  z-index: 2;
 }
 
 .Toolbar_top {
@@ -16,5 +28,17 @@
 .Toolbar_color_picker {
   position: fixed;
   bottom: 0;
+}
+
+@media (min-width: 750px) {
+  .Toolbar_toggle {
+    display: none;
+  }
+  .Toolbar {
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 220px;
+  }
 }
 /*# sourceMappingURL=Toolbar.css.map */
