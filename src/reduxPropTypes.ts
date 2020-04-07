@@ -8,6 +8,9 @@ interface RootState {
   bgColor: string;
   hxColor: string;
   textColor: string;
+  logoText: string;
+  heroText: string;
+  bodyText: string;
 }
 
 const mapState = (state: RootState) => ({
@@ -17,7 +20,10 @@ const mapState = (state: RootState) => ({
   emphasisComplimentColor: state.emphasisComplimentColor,
   bgColor: state.bgColor,
   hxColor: state.hxColor,
-  textColor: state.textColor
+  textColor: state.textColor,
+  logoText: state.logoText,
+  heroText: state.heroText,
+  bodyText: state.bodyText
 });
 
 const mapDispatch = {
@@ -39,6 +45,18 @@ const mapDispatch = {
   changeTextColor: (color: string) => ({
     type: 'CHANGE_TEXT_COLOR',
     payload: color
+  }),
+  chanteLogoText: (str: string) => ({
+    type: 'CHANGE_LOGO_TEXT',
+    payload: str
+  }),
+  chanteHeroText: (str: string) => ({
+    type: 'CHANGE_HERO_TEXT',
+    payload: str
+  }),
+  chanteBodyText: (str: string) => ({
+    type: 'CHANGE_BODY_TEXT',
+    payload: str
   })
 };
 
