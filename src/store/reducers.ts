@@ -7,7 +7,10 @@ import {
   CHANGE_EMPHASIS_COMPLIMENT_COLOR,
   CHANGE_BG_COLOR,
   CHANGE_HX_COLOR,
-  CHANGE_TEXT_COLOR
+  CHANGE_TEXT_COLOR,
+  CHANGE_LOGO_TEXT,
+  CHANGE_HERO_TEXT,
+  CHANGE_BODY_TEXT
 } from './types';
 import { changeEmphasisComplimentColor } from './action';
 
@@ -18,7 +21,11 @@ const initialState: VisualizerState = {
   emphasisComplimentColor: '#e3ffd8',
   bgColor: '#242323',
   hxColor: '#9756ec',
-  textColor: '#9756ec'
+  textColor: '#9756ec',
+  logoText: 'App Name',
+  heroText: 'Hero Text, Being Heroic',
+  bodyText:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 };
 
 export function vizualizerReducer(state = initialState, action: VisualizerActionTypes): VisualizerState {
@@ -57,6 +64,21 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
       return {
         ...state,
         textColor: action.payload
+      };
+    case CHANGE_LOGO_TEXT:
+      return {
+        ...state,
+        logoText: action.payload
+      };
+    case CHANGE_HERO_TEXT:
+      return {
+        ...state,
+        heroText: action.payload
+      };
+    case CHANGE_BODY_TEXT:
+      return {
+        ...state,
+        bodyText: action.payload
       };
 
     default:

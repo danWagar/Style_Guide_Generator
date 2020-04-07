@@ -6,7 +6,10 @@ import {
   CHANGE_SELECTED,
   CHANGE_BG_COLOR,
   CHANGE_HX_COLOR,
-  CHANGE_TEXT_COLOR
+  CHANGE_TEXT_COLOR,
+  CHANGE_LOGO_TEXT,
+  CHANGE_HERO_TEXT,
+  CHANGE_BODY_TEXT
 } from './types';
 import { ViewportZoomProperty } from 'csstype';
 
@@ -56,5 +59,26 @@ export function changeTextColor(newColor: string): VisualizerActionTypes {
   return {
     type: CHANGE_TEXT_COLOR,
     payload: newColor
+  };
+}
+
+export function changeLogoText(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_LOGO_TEXT,
+    payload: newStr
+  };
+}
+
+export function changeHeroText(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_HERO_TEXT,
+    payload: newStr
+  };
+}
+
+export function changeBodyText(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_BODY_TEXT,
+    payload: newStr
   };
 }

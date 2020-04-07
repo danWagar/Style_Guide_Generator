@@ -7,6 +7,9 @@ export interface VisualizerState {
   bgColor?: string;
   hxColor?: string;
   textColor?: string;
+  logoText?: string;
+  heroText?: string;
+  bodyText?: string;
 }
 
 //Actions
@@ -52,6 +55,24 @@ interface ChangeTextColor {
   payload: string;
 }
 
+export const CHANGE_LOGO_TEXT = 'CHANGE_LOGO_TEXT';
+interface ChangeLogoText {
+  type: typeof CHANGE_LOGO_TEXT;
+  payload: string;
+}
+
+export const CHANGE_HERO_TEXT = 'CHANGE_HERO_TEXT';
+interface ChangeHeroText {
+  type: typeof CHANGE_HERO_TEXT;
+  payload: string;
+}
+
+export const CHANGE_BODY_TEXT = 'CHANGE_BODY_TEXT';
+interface ChangeBodyText {
+  type: typeof CHANGE_BODY_TEXT;
+  payload: string;
+}
+
 export type VisualizerActionTypes =
   | ChangeSelected
   | ChangeHeaderBGColorAction
@@ -59,6 +80,9 @@ export type VisualizerActionTypes =
   | ChangeEmphasisComplimentColorAction
   | ChangeBGColor
   | ChangeHxColor
-  | ChangeTextColor;
+  | ChangeTextColor
+  | ChangeLogoText
+  | ChangeHeroText
+  | ChangeBodyText;
 
 //
