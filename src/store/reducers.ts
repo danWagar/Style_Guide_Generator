@@ -12,7 +12,6 @@ import {
   CHANGE_HERO_TEXT,
   CHANGE_BODY_TEXT
 } from './types';
-import { changeEmphasisComplimentColor } from './action';
 
 const initialState: VisualizerState = {
   selected: null,

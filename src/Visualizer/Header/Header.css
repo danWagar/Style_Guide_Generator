@@ -27,15 +27,17 @@
   text-align: center;
 }
 
+.Header_input {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid grey;
+}
+
 .Header_login {
   padding-bottom: 10px;
-}
-
-.Header_bg_color {
-  background-color: #a8ffbd;
-}
-
-.Header_link_color {
-  color: #242323;
 }
 /*# sourceMappingURL=Header.css.map */

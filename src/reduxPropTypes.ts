@@ -46,15 +46,15 @@ const mapDispatch = {
     type: 'CHANGE_TEXT_COLOR',
     payload: color
   }),
-  chanteLogoText: (str: string) => ({
+  changeLogoText: (str: string) => ({
     type: 'CHANGE_LOGO_TEXT',
     payload: str
   }),
-  chanteHeroText: (str: string) => ({
+  changeHeroText: (str: string) => ({
     type: 'CHANGE_HERO_TEXT',
     payload: str
   }),
-  chanteBodyText: (str: string) => ({
+  changeBodyText: (str: string) => ({
     type: 'CHANGE_BODY_TEXT',
     payload: str
   })

@@ -1,5 +1,4 @@
-$header_bg_color: #a8ffbd;
-$header_link_color: #242323;
+@import '../../variables';
 
 .Header {
   display: flex;
@@ -20,14 +19,16 @@ $header_link_color: #242323;
   text-align: center;
 }
 
+.Header_input {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: $hx_font;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid grey;
+}
+
 .Header_login {
   padding-bottom: 10px;
-}
-
-.Header_bg_color {
-  background-color: $header_bg_color;
-}
-
-.Header_link_color {
-  color: $header_link_color;
 }
