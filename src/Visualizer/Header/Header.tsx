@@ -18,7 +18,7 @@ const Header: React.FC<Props> = props => {
 
   const handleLogoClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (editLogoText) return;
-    setEditLogoText(!editLogoText);
+    toggleEditLogoText();
   };
 
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -27,10 +27,21 @@ const Header: React.FC<Props> = props => {
 
   const handleLogoInputSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.preventDefault();
-    let logoInputText = e.currentTarget.value;
-    if (logoInputText === '') logoInputText = '\u00a0';
-    changeLogoText(logoInputText);
+    updateLogoText(e.currentTarget.value);
+  };
+
+  const handleFocusOut = (e: React.FocusEvent<HTMLInputElement>) => {
+    updateLogoText(e.currentTarget.value);
+  };
+
+  const toggleEditLogoText = () => {
     setEditLogoText(!editLogoText);
+  };
+
+  const updateLogoText = (newStr: string) => {
+    if (newStr === '') newStr = '\u00a0';
+    changeLogoText(newStr);
+    toggleEditLogoText();
   };
 
   const renderInputElement = () => {
@@ -43,6 +54,7 @@ const Header: React.FC<Props> = props => {
           defaultValue={logoText}
           onKeyPress={handleEnter}
           autoFocus
+          onBlur={handleFocusOut}
         />
       </>
     );
