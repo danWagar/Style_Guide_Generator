@@ -4,4 +4,30 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+@media (min-width: 1024px) {
+  .LandingPage_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 650px;
+    margin: 0 auto;
+    padding-top: 20vh;
+  }
+  .LandingPage_container p {
+    text-align: center;
+  }
+  .LandingPage_hero_text {
+    font-size: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-top: 0;
+  }
+}
 /*# sourceMappingURL=LandingPage.css.map */

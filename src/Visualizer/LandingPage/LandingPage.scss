@@ -1,6 +1,32 @@
+@import '../../variables';
+
 .LandingPage_hero_text {
   font-size: 3rem;
   font-weight: normal;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+@media (min-width: 1024px) {
+  .LandingPage {
+  }
+
+  .LandingPage_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    margin: 0 auto;
+    padding-top: 20vh;
+
+    & p {
+      text-align: center;
+    }
+  }
+
+  .LandingPage_hero_text {
+    font-size: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-top: 0;
+  }
 }
