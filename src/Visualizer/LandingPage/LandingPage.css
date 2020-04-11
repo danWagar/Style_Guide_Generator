@@ -21,13 +21,16 @@
     margin: 0 auto;
     padding-top: 20vh;
   }
-  .LandingPage_container p {
-    text-align: center;
-  }
   .LandingPage_hero_text {
     font-size: 3.5rem;
     padding-bottom: 3.5rem;
     padding-top: 0;
+  }
+  .LandingPage_body_text_container {
+    width: 100%;
+  }
+  .LandingPage_body_text_container p {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=LandingPage.css.map */

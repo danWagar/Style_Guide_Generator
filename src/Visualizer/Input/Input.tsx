@@ -9,6 +9,8 @@ interface IInput extends Props {
   defaultValue?: string;
   style?: CSS.Properties;
   className?: string;
+  textField?: boolean;
+  height?: number;
 }
 
 const Input: React.FC<IInput> = props => {
@@ -19,7 +21,10 @@ const Input: React.FC<IInput> = props => {
     style,
     changeLogoText,
     changeHeroText,
-    className
+    changeBodyText,
+    className,
+    textField,
+    height
   } = props;
 
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -27,11 +32,14 @@ const Input: React.FC<IInput> = props => {
   };
 
   const handleInputSubmit = (
-    e: React.KeyboardEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>
+    e:
+      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
+      | React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     console.log(toChange);
     let input = e.currentTarget.value;
     input = checkEmptyStr(input);
+    input = input.trim();
     console.log(input);
     switch (toChange) {
       case 'Logo':
@@ -39,6 +47,9 @@ const Input: React.FC<IInput> = props => {
         break;
       case 'Hero':
         changeHeroText(input);
+        break;
+      case 'Body':
+        changeBodyText(input);
         break;
       default:
         console.log('error: selected element not provided for input submittal');
@@ -54,16 +65,28 @@ const Input: React.FC<IInput> = props => {
 
   return (
     <>
-      <input
-        className={'Input ' + className}
-        name={toChange}
-        type="text"
-        defaultValue={defaultValue}
-        onKeyPress={handleEnter}
-        autoFocus
-        onBlur={handleInputSubmit}
-        style={style}
-      />
+      {textField ? (
+        <textarea
+          className={'Input ' + className}
+          name={toChange}
+          defaultValue={defaultValue}
+          //onKeyPress={handleEnter}
+          autoFocus
+          onBlur={handleInputSubmit}
+          style={{ ...style, height: `${height}px` }}
+        />
+      ) : (
+        <input
+          className={'Input ' + className}
+          name={toChange}
+          type="text"
+          defaultValue={defaultValue}
+          onKeyPress={handleEnter}
+          autoFocus
+          onBlur={handleInputSubmit}
+          style={style}
+        />
+      )}
     </>
   );
 };

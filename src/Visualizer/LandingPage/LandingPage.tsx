@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Props, connector } from '../../reduxPropTypes';
 import Input from '../Input/Input';
 import CSS from 'csstype';
@@ -8,6 +8,14 @@ const LandingPage: React.FC<Props> = props => {
   const { bgColor, hxColor, textColor, heroText, bodyText } = props;
   const [editHeroText, setEditHeroText] = useState(false);
   const [editBodyText, setEditBodyText] = useState(false);
+  const [bodyTextHeight, setBodyTextHeight] = useState<number | undefined>(0);
+  const ref = useRef<HTMLParagraphElement | null>(null) as React.MutableRefObject<HTMLParagraphElement>;
+
+  useEffect(() => {
+    if (!ref.current) return;
+    console.log(ref.current.clientHeight);
+    setBodyTextHeight(ref.current.clientHeight + 8);
+  });
 
   const mainStyle: CSS.Properties = {
     backgroundColor: bgColor
@@ -54,8 +62,22 @@ const LandingPage: React.FC<Props> = props => {
             />
           )}
         </div>
-        <div onClick={handleBodyTextClick}>
-          <p style={textStyle}>{bodyText}</p>
+        <div className="LandingPage_body_text_container" onClick={handleBodyTextClick}>
+          {!editBodyText ? (
+            <p ref={ref} style={textStyle}>
+              {bodyText}
+            </p>
+          ) : (
+            <Input
+              parentStateCallback={toggleEditBodyText}
+              toChange="Body"
+              defaultValue={bodyText}
+              style={textStyle}
+              className="LandingPage_body_text_container"
+              textField={true}
+              height={bodyTextHeight}
+            />
+          )}
         </div>
       </div>
     </main>
