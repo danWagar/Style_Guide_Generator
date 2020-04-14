@@ -1,4 +1,4 @@
-import { Props } from './reduxPropTypes';
+import { Props } from './reduxInterface';
 import { Properties } from 'csstype';
 
 export default class Styles {
@@ -6,6 +6,7 @@ export default class Styles {
   emphasisColorStyle!: Properties;
   emphasisComplimentColorStyle!: Properties;
   bgColorStyle!: Properties;
+  logoColorStyle!: Properties;
   hxColorStyle!: Properties;
   textColorStyle!: Properties;
   colorBoxStyle: Properties;
@@ -25,6 +26,10 @@ export default class Styles {
 
     this.bgColorStyle = {
       backgroundColor: props.bgColor
+    };
+
+    this.logoColorStyle = {
+      backgroundColor: props.logoColor
     };
 
     this.hxColorStyle = {
@@ -54,6 +59,9 @@ export default class Styles {
   }
   getBGColorStyle(): Properties {
     return this.bgColorStyle;
+  }
+  getLogoColorStyle(): Properties {
+    return this.logoColorStyle;
   }
   getHxColorStyle(): Properties {
     return this.hxColorStyle;

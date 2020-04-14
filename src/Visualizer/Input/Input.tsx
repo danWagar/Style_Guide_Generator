@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props, connector } from '../../reduxPropTypes';
+import { Props, connector } from '../../reduxInterface';
 import './Input.css';
 import CSS from 'csstype';
 

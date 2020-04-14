@@ -1,5 +1,11 @@
 @import '../variables';
 
+label {
+  color: white;
+  padding-right: 10px;
+  font-family: $primary-font;
+}
+
 .Toolbar {
   box-sizing: border-box;
   position: fixed;

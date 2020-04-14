@@ -1,17 +1,18 @@
 import React from 'react';
-import { Props, connector } from '../../reduxPropTypes';
+import { Props, connector } from '../../reduxInterface';
 import Styles from '../../styles';
 import CSS from 'csstype';
 import './Selector.css';
 
-interface ISelector extends Props {
-  handleSelectedColorChange: (e: React.MouseEvent<HTMLLIElement>) => void;
-}
-
-const Selector: React.FC<ISelector> = props => {
-  const { selected, handleSelectedColorChange } = props;
+const Selector: React.FC<Props> = props => {
+  const { selected, changeSelected } = props;
 
   const style = new Styles(props);
+
+  const handleSelectedColorChange = (e: React.MouseEvent<HTMLLIElement>) => {
+    console.log(e.currentTarget.dataset.id);
+    changeSelected(e.currentTarget.dataset.id);
+  };
 
   return (
     <ul className="Selector_list">
@@ -46,6 +47,14 @@ const Selector: React.FC<ISelector> = props => {
       >
         <div style={{ ...style.getColorBoxStyle(), ...style.getBGColorStyle() }}></div>
         Background
+      </li>
+      <li
+        className={selected === 'Logo' ? 'selected' : ''}
+        onClick={handleSelectedColorChange}
+        data-id="Logo"
+      >
+        <div style={{ ...style.getColorBoxStyle(), ...style.getLogoColorStyle() }}></div>
+        Logo
       </li>
       <li className={selected === 'Hx' ? 'selected' : ''} onClick={handleSelectedColorChange} data-id="Hx">
         <div style={{ ...style.getColorBoxStyle(), ...style.getHxColorStyle() }}></div>

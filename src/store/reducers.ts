@@ -6,14 +6,15 @@ import {
   CHANGE_EMPHASIS_COLOR,
   CHANGE_EMPHASIS_COMPLIMENT_COLOR,
   CHANGE_BG_COLOR,
+  CHANGE_LOGO_COLOR,
   CHANGE_HX_COLOR,
   CHANGE_TEXT_COLOR,
   CHANGE_LOGO_TEXT,
   CHANGE_HERO_TEXT,
   CHANGE_BODY_TEXT,
   CHANGE_LOGO_FONT,
-  CHANGE_HERO_FONT,
-  CHANGE_BODY_FONT
+  CHANGE_HX_FONT,
+  CHANGE_TEXT_FONT
 } from './types';
 
 const initialState: VisualizerState = {
@@ -22,6 +23,7 @@ const initialState: VisualizerState = {
   emphasisColor: '#720ff3',
   emphasisComplimentColor: '#e3ffd8',
   bgColor: '#242323',
+  logoColor: '#000',
   hxColor: '#9756ec',
   textColor: '#9756ec',
   logoText: 'App Name',
@@ -29,8 +31,8 @@ const initialState: VisualizerState = {
   bodyText:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
   logoFont: 'Raleway, sans-serif',
-  heroFont: 'Open Sans, sans-serif',
-  bodyFont: 'Open Sans, sans-serif'
+  hxFont: 'Open Sans, sans-serif',
+  textFont: 'Open Sans, sans-serif'
 };
 
 export function vizualizerReducer(state = initialState, action: VisualizerActionTypes): VisualizerState {
@@ -59,6 +61,11 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
       return {
         ...state,
         bgColor: action.payload
+      };
+    case CHANGE_LOGO_COLOR:
+      return {
+        ...state,
+        logoColor: action.payload
       };
     case CHANGE_HX_COLOR:
       return {
@@ -90,15 +97,15 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
         ...state,
         logoFont: action.payload
       };
-    case CHANGE_HERO_FONT:
+    case CHANGE_HX_FONT:
       return {
         ...state,
-        heroFont: action.payload
+        hxFont: action.payload
       };
-    case CHANGE_BODY_FONT:
+    case CHANGE_TEXT_FONT:
       return {
         ...state,
-        bodyFont: action.payload
+        textFont: action.payload
       };
 
     default:

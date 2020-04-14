@@ -5,14 +5,15 @@ export interface VisualizerState {
   emphasisColor?: string;
   emphasisComplimentColor?: string;
   bgColor?: string;
+  logoColor?: string;
   hxColor?: string;
   textColor?: string;
   logoText?: string;
   heroText?: string;
   bodyText?: string;
   logoFont?: string;
-  heroFont?: string;
-  bodyFont?: string;
+  hxFont?: string;
+  textFont?: string;
 }
 
 //Actions
@@ -43,6 +44,12 @@ interface ChangeEmphasisComplimentColorAction {
 export const CHANGE_BG_COLOR = 'CHANGE_BG_COLOR';
 interface ChangeBGColor {
   type: typeof CHANGE_BG_COLOR;
+  payload: string;
+}
+
+export const CHANGE_LOGO_COLOR = 'CHANGE_LOGO_COLOR';
+interface ChangeLogoColor {
+  type: typeof CHANGE_LOGO_COLOR;
   payload: string;
 }
 
@@ -82,15 +89,15 @@ interface ChangeLogoFont {
   payload: string;
 }
 
-export const CHANGE_HERO_FONT = 'CHANGE_HERO_FONT';
+export const CHANGE_HX_FONT = 'CHANGE_HX_FONT';
 interface ChangeHeroFont {
-  type: typeof CHANGE_HERO_FONT;
+  type: typeof CHANGE_HX_FONT;
   payload: string;
 }
 
-export const CHANGE_BODY_FONT = 'CHANGE_BODY_FONT';
+export const CHANGE_TEXT_FONT = 'CHANGE_TEXT_FONT';
 interface ChangeBodyFont {
-  type: typeof CHANGE_BODY_FONT;
+  type: typeof CHANGE_TEXT_FONT;
   payload: string;
 }
 
@@ -100,6 +107,7 @@ export type VisualizerActionTypes =
   | ChangeEmphasisColorAction
   | ChangeEmphasisComplimentColorAction
   | ChangeBGColor
+  | ChangeLogoColor
   | ChangeHxColor
   | ChangeTextColor
   | ChangeLogoText

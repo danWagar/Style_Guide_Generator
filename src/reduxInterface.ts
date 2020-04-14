@@ -5,12 +5,16 @@ interface RootState {
   headerBGColor: string;
   emphasisColor: string;
   emphasisComplimentColor: string;
+  logoColor: string;
   bgColor: string;
   hxColor: string;
   textColor: string;
   logoText: string;
   heroText: string;
   bodyText: string;
+  logoFont: string;
+  hxFont: string;
+  textFont: string;
 }
 
 const mapState = (state: RootState) => ({
@@ -18,12 +22,16 @@ const mapState = (state: RootState) => ({
   headerBGColor: state.headerBGColor,
   emphasisColor: state.emphasisColor,
   emphasisComplimentColor: state.emphasisComplimentColor,
+  logoColor: state.logoColor,
   bgColor: state.bgColor,
   hxColor: state.hxColor,
   textColor: state.textColor,
   logoText: state.logoText,
   heroText: state.heroText,
-  bodyText: state.bodyText
+  bodyText: state.bodyText,
+  logoFont: state.logoFont,
+  hxFont: state.hxFont,
+  textFont: state.textFont
 });
 
 const mapDispatch = {
@@ -36,6 +44,10 @@ const mapDispatch = {
   }),
   changeBGColor: (color: string) => ({
     type: 'CHANGE_BG_COLOR',
+    payload: color
+  }),
+  changeLogoColor: (color: string) => ({
+    type: 'CHANGE_LOGO_COLOR',
     payload: color
   }),
   changeHxColor: (color: string) => ({
@@ -57,6 +69,18 @@ const mapDispatch = {
   changeBodyText: (str: string) => ({
     type: 'CHANGE_BODY_TEXT',
     payload: str
+  }),
+  changeLogoFont: (fnt: string) => ({
+    type: 'CHANGE_LOGO_FONT',
+    payload: fnt
+  }),
+  changeHxFont: (fnt: string) => ({
+    type: 'CHANGE_HX_FONT',
+    payload: fnt
+  }),
+  changeTextFont: (fnt: string) => ({
+    type: 'CHANGE_TEXT_FONT',
+    payload: fnt
   })
 };
 

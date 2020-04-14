@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Props, connector } from '../../reduxPropTypes';
+import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
 import CSS from 'csstype';
 import './LandingPage.css';
 
 const LandingPage: React.FC<Props> = props => {
-  const { bgColor, hxColor, textColor, heroText, bodyText } = props;
+  const { bgColor, hxColor, textColor, heroText, bodyText, hxFont, textFont } = props;
   const [editHeroText, setEditHeroText] = useState(false);
   const [editBodyText, setEditBodyText] = useState(false);
   const [bodyTextHeight, setBodyTextHeight] = useState<number | undefined>(0);
@@ -21,10 +21,12 @@ const LandingPage: React.FC<Props> = props => {
     backgroundColor: bgColor
   };
   const hxStyle: CSS.Properties = {
-    color: hxColor
+    color: hxColor,
+    fontFamily: hxFont
   };
   const textStyle: CSS.Properties = {
-    color: textColor
+    color: textColor,
+    fontFamily: textFont
   };
 
   const toggleEditHeroText = () => {

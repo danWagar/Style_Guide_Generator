@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { Props, connector } from '../../reduxPropTypes';
+import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
 import CSS from 'csstype';
 import './Header.css';
 
 const Header: React.FC<Props> = props => {
-  const { headerBGColor, emphasisColor, emphasisComplimentColor, logoText, changeLogoText } = props;
+  const {
+    headerBGColor,
+    emphasisColor,
+    emphasisComplimentColor,
+    logoFont,
+    logoColor,
+    logoText,
+    changeLogoText
+  } = props;
   const [editLogoText, setEditLogoText] = useState<boolean>(false);
 
   const headerStyles: CSS.Properties = {
@@ -14,6 +22,10 @@ const Header: React.FC<Props> = props => {
   const emphasisButtonStyle: CSS.Properties = {
     color: emphasisComplimentColor,
     backgroundColor: emphasisColor
+  };
+  const logoStyles: CSS.Properties = {
+    color: logoColor,
+    fontFamily: logoFont
   };
 
   const toggleEditLogoText = () => {
@@ -29,7 +41,9 @@ const Header: React.FC<Props> = props => {
     <header className="Header" style={headerStyles}>
       <div className="Header_logo_containter" onClick={handleLogoClick}>
         {!editLogoText ? (
-          <h1 className="Header_logo_text">{logoText}</h1>
+          <h1 className="Header_logo_text" style={logoStyles}>
+            {logoText}
+          </h1>
         ) : (
           <Input
             toChange="Logo"

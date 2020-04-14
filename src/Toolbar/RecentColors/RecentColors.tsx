@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props, connector } from '../../reduxPropTypes';
+import { Props, connector } from '../../reduxInterface';
 import { ColorChangeHandler, ColorResult } from 'react-color';
 import { hexToHSL, hexToRGB } from '../../colorConvert';
 import Styles from '../../styles';

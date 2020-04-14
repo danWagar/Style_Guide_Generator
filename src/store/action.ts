@@ -5,14 +5,15 @@ import {
   CHANGE_EMPHASIS_COMPLIMENT_COLOR,
   CHANGE_SELECTED,
   CHANGE_BG_COLOR,
+  CHANGE_LOGO_COLOR,
   CHANGE_HX_COLOR,
   CHANGE_TEXT_COLOR,
   CHANGE_LOGO_TEXT,
   CHANGE_HERO_TEXT,
   CHANGE_BODY_TEXT,
-  CHANGE_HERO_FONT,
+  CHANGE_HX_FONT,
   CHANGE_LOGO_FONT,
-  CHANGE_BODY_FONT
+  CHANGE_TEXT_FONT
 } from './types';
 import { ViewportZoomProperty } from 'csstype';
 
@@ -47,6 +48,13 @@ export function changeEmphasisComplimentColor(newColor: string): VisualizerActio
 export function changeBGColor(newColor: string): VisualizerActionTypes {
   return {
     type: CHANGE_BG_COLOR,
+    payload: newColor
+  };
+}
+
+export function changeLogoColor(newColor: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_LOGO_COLOR,
     payload: newColor
   };
 }
@@ -93,16 +101,16 @@ export function changeLogoFont(newStr: string): VisualizerActionTypes {
   };
 }
 
-export function changeHeroFont(newStr: string): VisualizerActionTypes {
+export function changeHxFont(newStr: string): VisualizerActionTypes {
   return {
-    type: CHANGE_HERO_FONT,
+    type: CHANGE_HX_FONT,
     payload: newStr
   };
 }
 
-export function changeBodyFont(newStr: string): VisualizerActionTypes {
+export function changeTextFont(newStr: string): VisualizerActionTypes {
   return {
-    type: CHANGE_BODY_FONT,
+    type: CHANGE_TEXT_FONT,
     payload: newStr
   };
 }
