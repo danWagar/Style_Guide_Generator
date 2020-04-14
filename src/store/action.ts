@@ -9,7 +9,10 @@ import {
   CHANGE_TEXT_COLOR,
   CHANGE_LOGO_TEXT,
   CHANGE_HERO_TEXT,
-  CHANGE_BODY_TEXT
+  CHANGE_BODY_TEXT,
+  CHANGE_HERO_FONT,
+  CHANGE_LOGO_FONT,
+  CHANGE_BODY_FONT
 } from './types';
 import { ViewportZoomProperty } from 'csstype';
 
@@ -79,6 +82,27 @@ export function changeHeroText(newStr: string): VisualizerActionTypes {
 export function changeBodyText(newStr: string): VisualizerActionTypes {
   return {
     type: CHANGE_BODY_TEXT,
+    payload: newStr
+  };
+}
+
+export function changeLogoFont(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_LOGO_FONT,
+    payload: newStr
+  };
+}
+
+export function changeHeroFont(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_HERO_FONT,
+    payload: newStr
+  };
+}
+
+export function changeBodyFont(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_BODY_FONT,
     payload: newStr
   };
 }

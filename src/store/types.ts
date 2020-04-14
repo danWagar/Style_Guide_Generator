@@ -10,6 +10,9 @@ export interface VisualizerState {
   logoText?: string;
   heroText?: string;
   bodyText?: string;
+  logoFont?: string;
+  heroFont?: string;
+  bodyFont?: string;
 }
 
 //Actions
@@ -73,6 +76,24 @@ interface ChangeBodyText {
   payload: string;
 }
 
+export const CHANGE_LOGO_FONT = 'CHANGE_LOGO_FONT';
+interface ChangeLogoFont {
+  type: typeof CHANGE_LOGO_FONT;
+  payload: string;
+}
+
+export const CHANGE_HERO_FONT = 'CHANGE_HERO_FONT';
+interface ChangeHeroFont {
+  type: typeof CHANGE_HERO_FONT;
+  payload: string;
+}
+
+export const CHANGE_BODY_FONT = 'CHANGE_BODY_FONT';
+interface ChangeBodyFont {
+  type: typeof CHANGE_BODY_FONT;
+  payload: string;
+}
+
 export type VisualizerActionTypes =
   | ChangeSelected
   | ChangeHeaderBGColorAction
@@ -83,6 +104,9 @@ export type VisualizerActionTypes =
   | ChangeTextColor
   | ChangeLogoText
   | ChangeHeroText
-  | ChangeBodyText;
+  | ChangeBodyText
+  | ChangeLogoFont
+  | ChangeHeroFont
+  | ChangeBodyFont;
 
 //
