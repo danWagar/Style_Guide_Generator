@@ -40,40 +40,45 @@ const Toolbar: React.FC<Props> = props => {
     headerBGColor
   ];
 
-  const [recentColors, setRecentColors] = useState<Array<string>>(initialColors);
-  const [selectedColor, setSelectedColor] = useState<string>('#fff');
+  const [recentColors, setRecentColors] = useState<Array<ColorResult>>(initialColors);
+  const [selectedColor, setSelectedColor] = useState<ColorResult>({
+    hex: 'fff',
+    rgb: { r: 255, g: 255, b: 255, a: 1 },
+    hsl: { h: 0, s: 0, l: 1, a: 1 }
+  });
   const [selectedFont, setSelectedFont] = useState<string>('Roboto, sans-serif');
   const [showToolbar, setShowToolbar] = useState<boolean>(false);
 
-  const generateRecentColors = (col: string) => {
+  const generateRecentColors = (col: ColorResult) => {
     if (recentColors.includes(col)) return;
     setRecentColors([...recentColors.slice(1, 6), col]);
   };
 
   const handleColorChangeComplete = (col: ColorResult) => {
-    generateRecentColors(col.hex);
-    setSelectedColor(col.hex);
+    console.log(col);
+    generateRecentColors(col);
+    setSelectedColor(col);
     switch (selected) {
       case 'Header Background':
-        changeHeaderBGColor(col.hex);
+        changeHeaderBGColor(col);
         return;
       case 'Emphasis':
-        changeEmphasisColor(col.hex);
+        changeEmphasisColor(col);
         return;
       case 'Emphasis Compliment':
-        changeEmphasisComplimentColor(col.hex);
+        changeEmphasisComplimentColor(col);
         return;
       case 'Background':
-        changeBGColor(col.hex);
+        changeBGColor(col);
         return;
       case 'Logo':
-        changeLogoColor(col.hex);
+        changeLogoColor(col);
         return;
       case 'Hx':
-        changeHxColor(col.hex);
+        changeHxColor(col);
         return;
       case 'Text':
-        changeTextColor(col.hex);
+        changeTextColor(col);
         return;
       default:
         return;
@@ -121,7 +126,7 @@ const Toolbar: React.FC<Props> = props => {
           </div>
           <FontPicker />
           <div className="Toolbar_color_picker">
-            <SketchPicker color={selectedColor} onChangeComplete={handleColorChangeComplete} />
+            <SketchPicker color={selectedColor.rgb} onChangeComplete={handleColorChangeComplete} />
           </div>
         </div>
       )}

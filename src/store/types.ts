@@ -1,13 +1,33 @@
 //Reducers
+interface HSLColor {
+  a?: number;
+  h: number;
+  l: number;
+  s: number;
+}
+
+interface RGBColor {
+  a?: number;
+  b: number;
+  g: number;
+  r: number;
+}
+
+interface ColorResult {
+  hex: string;
+  hsl: HSLColor;
+  rgb: RGBColor;
+}
+
 export interface VisualizerState {
   selected?: string | null | undefined;
-  headerBGColor?: string;
-  emphasisColor?: string;
-  emphasisComplimentColor?: string;
-  bgColor?: string;
-  logoColor?: string;
-  hxColor?: string;
-  textColor?: string;
+  headerBGColor?: ColorResult;
+  emphasisColor?: ColorResult;
+  emphasisComplimentColor?: ColorResult;
+  bgColor?: ColorResult;
+  logoColor?: ColorResult;
+  hxColor?: ColorResult;
+  textColor?: ColorResult;
   logoText?: string;
   heroText?: string;
   bodyText?: string;
@@ -26,43 +46,43 @@ interface ChangeSelected {
 export const CHANGE_HEADER_BG_COLOR = 'CHANGE_HEADER_BG_COLOR';
 interface ChangeHeaderBGColorAction {
   type: typeof CHANGE_HEADER_BG_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_EMPHASIS_COLOR = 'CHANGE_EMPHASIS_COLOR';
 interface ChangeEmphasisColorAction {
   type: typeof CHANGE_EMPHASIS_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_EMPHASIS_COMPLIMENT_COLOR = 'CHANGE_EMPHASIS_COMPLIMENT_COLOR';
 interface ChangeEmphasisComplimentColorAction {
   type: typeof CHANGE_EMPHASIS_COMPLIMENT_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_BG_COLOR = 'CHANGE_BG_COLOR';
 interface ChangeBGColor {
   type: typeof CHANGE_BG_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_LOGO_COLOR = 'CHANGE_LOGO_COLOR';
 interface ChangeLogoColor {
   type: typeof CHANGE_LOGO_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_HX_COLOR = 'CHANGE_HX_COLOR';
 interface ChangeHxColor {
   type: typeof CHANGE_HX_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_TEXT_COLOR = 'CHANGE_TEXT_COLOR';
 interface ChangeTextColor {
   type: typeof CHANGE_TEXT_COLOR;
-  payload: string;
+  payload: ColorResult;
 }
 
 export const CHANGE_LOGO_TEXT = 'CHANGE_LOGO_TEXT';

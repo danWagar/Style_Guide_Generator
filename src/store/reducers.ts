@@ -19,13 +19,26 @@ import {
 
 const initialState: VisualizerState = {
   selected: null,
-  headerBGColor: '#A8FFBD',
-  emphasisColor: '#720ff3',
-  emphasisComplimentColor: '#e3ffd8',
-  bgColor: '#242323',
-  logoColor: '#000',
-  hxColor: '#9756ec',
-  textColor: '#9756ec',
+  headerBGColor: {
+    hex: '#A8FFBD',
+    hsl: { h: 134, s: 100, l: 83, a: 1 },
+    rgb: { r: 168, g: 255, b: 189, a: 1 }
+  },
+
+  emphasisColor: {
+    hex: '#720ff3',
+    hsl: { h: 266, s: 90, l: 51, a: 1 },
+    rgb: { r: 114, g: 15, b: 243, a: 1 }
+  },
+  emphasisComplimentColor: {
+    hex: '#e3ffd8',
+    hsl: { h: 103, s: 100, l: 92, a: 1 },
+    rgb: { r: 227, g: 255, b: 216, a: 1 }
+  },
+  bgColor: { hex: '#242323', hsl: { h: 0, s: 1, l: 14, a: 1 }, rgb: { r: 36, g: 35, b: 35, a: 1 } },
+  logoColor: { hex: '#000', hsl: { h: 0, s: 0, l: 0, a: 1 }, rgb: { r: 0, g: 0, b: 0, a: 1 } },
+  hxColor: { hex: '#9756ec', hsl: { h: 266, s: 80, l: 63, a: 1 }, rgb: { r: 151, g: 86, b: 236, a: 1 } },
+  textColor: { hex: '#9756ec', hsl: { h: 266, s: 80, l: 63, a: 1 }, rgb: { r: 151, g: 86, b: 236, a: 1 } },
   logoText: 'App Name',
   heroText: 'Hero Text, Being Heroic',
   bodyText:

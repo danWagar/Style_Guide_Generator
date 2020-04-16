@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
+import { colorResultToRgbaString } from '../../colorConvert';
 import CSS from 'csstype';
 import './LandingPage.css';
 
@@ -18,14 +19,14 @@ const LandingPage: React.FC<Props> = props => {
   });
 
   const mainStyle: CSS.Properties = {
-    backgroundColor: bgColor
+    backgroundColor: colorResultToRgbaString(bgColor)
   };
   const hxStyle: CSS.Properties = {
-    color: hxColor,
+    color: colorResultToRgbaString(hxColor),
     fontFamily: hxFont
   };
   const textStyle: CSS.Properties = {
-    color: textColor,
+    color: colorResultToRgbaString(textColor),
     fontFamily: textFont
   };
 

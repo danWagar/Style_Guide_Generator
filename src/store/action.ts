@@ -15,7 +15,7 @@ import {
   CHANGE_LOGO_FONT,
   CHANGE_TEXT_FONT
 } from './types';
-import { ViewportZoomProperty } from 'csstype';
+import { ColorResult } from 'react-color';
 
 export function changeSelected(newSelected: string): VisualizerActionTypes {
   return {
@@ -24,49 +24,49 @@ export function changeSelected(newSelected: string): VisualizerActionTypes {
   };
 }
 
-export function changeHeaderBGColor(newColor: string): VisualizerActionTypes {
+export function changeHeaderBGColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_HEADER_BG_COLOR,
     payload: newColor
   };
 }
 
-export function changeEmphasisColor(newColor: string): VisualizerActionTypes {
+export function changeEmphasisColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_EMPHASIS_COLOR,
     payload: newColor
   };
 }
 
-export function changeEmphasisComplimentColor(newColor: string): VisualizerActionTypes {
+export function changeEmphasisComplimentColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_EMPHASIS_COMPLIMENT_COLOR,
     payload: newColor
   };
 }
 
-export function changeBGColor(newColor: string): VisualizerActionTypes {
+export function changeBGColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_BG_COLOR,
     payload: newColor
   };
 }
 
-export function changeLogoColor(newColor: string): VisualizerActionTypes {
+export function changeLogoColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_LOGO_COLOR,
     payload: newColor
   };
 }
 
-export function changeHxColor(newColor: string): VisualizerActionTypes {
+export function changeHxColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_HX_COLOR,
     payload: newColor
   };
 }
 
-export function changeTextColor(newColor: string): VisualizerActionTypes {
+export function changeTextColor(newColor: ColorResult): VisualizerActionTypes {
   return {
     type: CHANGE_TEXT_COLOR,
     payload: newColor

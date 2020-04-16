@@ -1,14 +1,15 @@
 import { connect, ConnectedProps } from 'react-redux';
+import { ColorResult } from 'react-color';
 
 interface RootState {
   selected: string | null | undefined;
-  headerBGColor: string;
-  emphasisColor: string;
-  emphasisComplimentColor: string;
-  logoColor: string;
-  bgColor: string;
-  hxColor: string;
-  textColor: string;
+  headerBGColor: ColorResult;
+  emphasisColor: ColorResult;
+  emphasisComplimentColor: ColorResult;
+  logoColor: ColorResult;
+  bgColor: ColorResult;
+  hxColor: ColorResult;
+  textColor: ColorResult;
   logoText: string;
   heroText: string;
   bodyText: string;
@@ -36,25 +37,25 @@ const mapState = (state: RootState) => ({
 
 const mapDispatch = {
   changeSelected: (selected: string | undefined | null) => ({ type: 'CHANGE_SELECTED', payload: selected }),
-  changeHeaderBGColor: (color: string) => ({ type: 'CHANGE_HEADER_BG_COLOR', payload: color }),
-  changeEmphasisColor: (color: string) => ({ type: 'CHANGE_EMPHASIS_COLOR', payload: color }),
-  changeEmphasisComplimentColor: (color: string) => ({
+  changeHeaderBGColor: (color: ColorResult) => ({ type: 'CHANGE_HEADER_BG_COLOR', payload: color }),
+  changeEmphasisColor: (color: ColorResult) => ({ type: 'CHANGE_EMPHASIS_COLOR', payload: color }),
+  changeEmphasisComplimentColor: (color: ColorResult) => ({
     type: 'CHANGE_EMPHASIS_COMPLIMENT_COLOR',
     payload: color
   }),
-  changeBGColor: (color: string) => ({
+  changeBGColor: (color: ColorResult) => ({
     type: 'CHANGE_BG_COLOR',
     payload: color
   }),
-  changeLogoColor: (color: string) => ({
+  changeLogoColor: (color: ColorResult) => ({
     type: 'CHANGE_LOGO_COLOR',
     payload: color
   }),
-  changeHxColor: (color: string) => ({
+  changeHxColor: (color: ColorResult) => ({
     type: 'CHANGE_HX_COLOR',
     payload: color
   }),
-  changeTextColor: (color: string) => ({
+  changeTextColor: (color: ColorResult) => ({
     type: 'CHANGE_TEXT_COLOR',
     payload: color
   }),

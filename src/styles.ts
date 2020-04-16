@@ -1,5 +1,7 @@
 import { Props } from './reduxInterface';
 import { Properties } from 'csstype';
+import { ColorResult } from 'react-color';
+import { colorResultToRgbaString } from './colorConvert';
 
 export default class Styles {
   headerBGColorStyle!: Properties;
@@ -13,31 +15,31 @@ export default class Styles {
 
   constructor(props: Props) {
     this.headerBGColorStyle = {
-      backgroundColor: props.headerBGColor
+      backgroundColor: colorResultToRgbaString(props.headerBGColor)
     };
 
     this.emphasisColorStyle = {
-      backgroundColor: props.emphasisColor
+      backgroundColor: colorResultToRgbaString(props.emphasisColor)
     };
 
     this.emphasisComplimentColorStyle = {
-      backgroundColor: props.emphasisComplimentColor
+      backgroundColor: colorResultToRgbaString(props.emphasisComplimentColor)
     };
 
     this.bgColorStyle = {
-      backgroundColor: props.bgColor
+      backgroundColor: colorResultToRgbaString(props.bgColor)
     };
 
     this.logoColorStyle = {
-      backgroundColor: props.logoColor
+      backgroundColor: colorResultToRgbaString(props.logoColor)
     };
 
     this.hxColorStyle = {
-      backgroundColor: props.hxColor
+      backgroundColor: colorResultToRgbaString(props.hxColor)
     };
 
     this.textColorStyle = {
-      backgroundColor: props.textColor
+      backgroundColor: colorResultToRgbaString(props.textColor)
     };
 
     this.colorBoxStyle = {

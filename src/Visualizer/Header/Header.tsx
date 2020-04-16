@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
+import { colorResultToRgbaString } from '../../colorConvert';
 import CSS from 'csstype';
 import './Header.css';
 
@@ -17,14 +18,14 @@ const Header: React.FC<Props> = props => {
   const [editLogoText, setEditLogoText] = useState<boolean>(false);
 
   const headerStyles: CSS.Properties = {
-    backgroundColor: headerBGColor
+    backgroundColor: colorResultToRgbaString(headerBGColor)
   };
   const emphasisButtonStyle: CSS.Properties = {
-    color: emphasisComplimentColor,
-    backgroundColor: emphasisColor
+    color: colorResultToRgbaString(emphasisComplimentColor),
+    backgroundColor: colorResultToRgbaString(emphasisColor)
   };
   const logoStyles: CSS.Properties = {
-    color: logoColor,
+    color: colorResultToRgbaString(logoColor),
     fontFamily: logoFont
   };
 
