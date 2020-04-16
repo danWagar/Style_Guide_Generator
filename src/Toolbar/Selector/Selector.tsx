@@ -9,8 +9,7 @@ const Selector: React.FC<Props> = props => {
 
   const style = new Styles(props);
 
-  const handleSelectedColorChange = (e: React.MouseEvent<HTMLLIElement>) => {
-    console.log(e.currentTarget.dataset.id);
+  const handleChangeComplete = (e: React.MouseEvent<HTMLLIElement>) => {
     changeSelected(e.currentTarget.dataset.id);
   };
 
@@ -18,7 +17,7 @@ const Selector: React.FC<Props> = props => {
     <ul className="Selector_list">
       <li
         className={selected === 'Header Background' ? 'selected' : ''}
-        onClick={handleSelectedColorChange}
+        onClick={handleChangeComplete}
         data-id="Header Background"
       >
         <div style={{ ...style.getColorBoxStyle(), ...style.getHeaderBGColorStyle() }}></div>
@@ -26,7 +25,7 @@ const Selector: React.FC<Props> = props => {
       </li>
       <li
         className={selected === 'Emphasis' ? 'selected' : ''}
-        onClick={handleSelectedColorChange}
+        onClick={handleChangeComplete}
         data-id="Emphasis"
       >
         <div style={{ ...style.getColorBoxStyle(), ...style.getEmphasisColorStyle() }}></div>
@@ -34,7 +33,7 @@ const Selector: React.FC<Props> = props => {
       </li>
       <li
         className={selected === 'Emphasis Compliment' ? 'selected' : ''}
-        onClick={handleSelectedColorChange}
+        onClick={handleChangeComplete}
         data-id="Emphasis Compliment"
       >
         <div style={{ ...style.getColorBoxStyle(), ...style.getEmphasisComplimentColorStyle() }}></div>
@@ -42,29 +41,21 @@ const Selector: React.FC<Props> = props => {
       </li>
       <li
         className={selected === 'Background' ? 'selected' : ''}
-        onClick={handleSelectedColorChange}
+        onClick={handleChangeComplete}
         data-id="Background"
       >
         <div style={{ ...style.getColorBoxStyle(), ...style.getBGColorStyle() }}></div>
         Background
       </li>
-      <li
-        className={selected === 'Logo' ? 'selected' : ''}
-        onClick={handleSelectedColorChange}
-        data-id="Logo"
-      >
+      <li className={selected === 'Logo' ? 'selected' : ''} onClick={handleChangeComplete} data-id="Logo">
         <div style={{ ...style.getColorBoxStyle(), ...style.getLogoColorStyle() }}></div>
         Logo
       </li>
-      <li className={selected === 'Hx' ? 'selected' : ''} onClick={handleSelectedColorChange} data-id="Hx">
+      <li className={selected === 'Hx' ? 'selected' : ''} onClick={handleChangeComplete} data-id="Hx">
         <div style={{ ...style.getColorBoxStyle(), ...style.getHxColorStyle() }}></div>
         Hx
       </li>
-      <li
-        className={selected === 'Text' ? 'selected' : ''}
-        onClick={handleSelectedColorChange}
-        data-id="Text"
-      >
+      <li className={selected === 'Text' ? 'selected' : ''} onClick={handleChangeComplete} data-id="Text">
         <div style={{ ...style.getColorBoxStyle(), ...style.getTextColorStyle() }}></div>
         Text
       </li>
