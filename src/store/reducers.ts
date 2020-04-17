@@ -14,7 +14,10 @@ import {
   CHANGE_BODY_TEXT,
   CHANGE_LOGO_FONT,
   CHANGE_HX_FONT,
-  CHANGE_TEXT_FONT
+  CHANGE_TEXT_FONT,
+  CHANGE_LOGO_FONT_SIZE,
+  CHANGE_HX_FONT_SIZE,
+  CHANGE_TEXT_FONT_SIZE
 } from './types';
 
 const initialState: VisualizerState = {
@@ -45,7 +48,10 @@ const initialState: VisualizerState = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
   logoFont: 'Raleway, sans-serif',
   hxFont: 'Open Sans, sans-serif',
-  textFont: 'Open Sans, sans-serif'
+  textFont: 'Open Sans, sans-serif',
+  logoFontSize: '32px',
+  hxFontSize: '56px',
+  textFontSize: '16px'
 };
 
 export function vizualizerReducer(state = initialState, action: VisualizerActionTypes): VisualizerState {
@@ -119,6 +125,22 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
       return {
         ...state,
         textFont: action.payload
+      };
+    case CHANGE_LOGO_FONT_SIZE:
+      return {
+        ...state,
+        logoFontSize: action.payload
+      };
+    case CHANGE_HX_FONT_SIZE:
+      console.log(action.payload);
+      return {
+        ...state,
+        hxFontSize: action.payload
+      };
+    case CHANGE_TEXT_FONT_SIZE:
+      return {
+        ...state,
+        textFontSize: action.payload
       };
 
     default:

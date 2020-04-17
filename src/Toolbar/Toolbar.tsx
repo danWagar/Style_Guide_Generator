@@ -4,6 +4,7 @@ import { SketchPicker, ColorResult } from 'react-color';
 import Selector from './Selector/Selector';
 import RecentColors from './RecentColors/RecentColors';
 import FontPicker from './FontPicker/FontPicker';
+import FontSizePicker from './FontSizePicker/FontSizePicker';
 import './Toolbar.css';
 import { changeHxFont } from '../store/action';
 
@@ -60,7 +61,6 @@ const Toolbar: React.FC<Props> = props => {
   };
 
   const handleColorChangeComplete = (col: ColorResult) => {
-    console.log(selected);
     generateRecentColors(col);
     setSelectedColor(col);
     switch (selected) {
@@ -113,8 +113,6 @@ const Toolbar: React.FC<Props> = props => {
     setShowToolbar(!showToolbar);
   };
 
-  console.log('rerender selected is ' + selected);
-
   return (
     <>
       <div className="Toolbar_toggle" onClick={toggleHideToolbar}>
@@ -126,7 +124,10 @@ const Toolbar: React.FC<Props> = props => {
             <Selector />
             <RecentColors colors={recentColors} handleChangeComplete={handleColorChangeComplete} />
           </div>
-          <FontPicker />
+          <div className="Toolbar_fonts">
+            <FontPicker />
+            <FontSizePicker />
+          </div>
           <div className="Toolbar_color_picker">
             <SketchPicker color={selectedColor.rgb} onChangeComplete={handleColorChangeComplete} />
           </div>

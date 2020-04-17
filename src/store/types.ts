@@ -34,6 +34,9 @@ export interface VisualizerState {
   logoFont?: string;
   hxFont?: string;
   textFont?: string;
+  logoFontSize: string;
+  hxFontSize: string;
+  textFontSize: string;
 }
 
 //Actions
@@ -121,6 +124,24 @@ interface ChangeBodyFont {
   payload: string;
 }
 
+export const CHANGE_LOGO_FONT_SIZE = 'CHANGE_LOGO_FONT_SIZE';
+interface ChangelogoFontSize {
+  type: typeof CHANGE_LOGO_FONT_SIZE;
+  payload: string;
+}
+
+export const CHANGE_HX_FONT_SIZE = 'CHANGE_HX_FONT_SIZE';
+interface ChangeHxFontSize {
+  type: typeof CHANGE_HX_FONT_SIZE;
+  payload: string;
+}
+
+export const CHANGE_TEXT_FONT_SIZE = 'CHANGE_TEXT_FONT_SIZE';
+interface ChangeTextFontSize {
+  type: typeof CHANGE_TEXT_FONT_SIZE;
+  payload: string;
+}
+
 export type VisualizerActionTypes =
   | ChangeSelected
   | ChangeHeaderBGColorAction
@@ -135,6 +156,9 @@ export type VisualizerActionTypes =
   | ChangeBodyText
   | ChangeLogoFont
   | ChangeHeroFont
-  | ChangeBodyFont;
+  | ChangeBodyFont
+  | ChangelogoFontSize
+  | ChangeHxFontSize
+  | ChangeTextFontSize;
 
 //

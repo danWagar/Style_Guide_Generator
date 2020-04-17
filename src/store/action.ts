@@ -13,7 +13,10 @@ import {
   CHANGE_BODY_TEXT,
   CHANGE_HX_FONT,
   CHANGE_LOGO_FONT,
-  CHANGE_TEXT_FONT
+  CHANGE_TEXT_FONT,
+  CHANGE_TEXT_FONT_SIZE,
+  CHANGE_HX_FONT_SIZE,
+  CHANGE_LOGO_FONT_SIZE
 } from './types';
 import { ColorResult } from 'react-color';
 
@@ -111,6 +114,27 @@ export function changeHxFont(newStr: string): VisualizerActionTypes {
 export function changeTextFont(newStr: string): VisualizerActionTypes {
   return {
     type: CHANGE_TEXT_FONT,
+    payload: newStr
+  };
+}
+
+export function changeLogoFontSize(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_LOGO_FONT_SIZE,
+    payload: newStr
+  };
+}
+
+export function changeHxFontSize(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_HX_FONT_SIZE,
+    payload: newStr
+  };
+}
+
+export function changeTextFontSize(newStr: string): VisualizerActionTypes {
+  return {
+    type: CHANGE_TEXT_FONT_SIZE,
     payload: newStr
   };
 }

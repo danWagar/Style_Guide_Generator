@@ -16,6 +16,9 @@ interface RootState {
   logoFont: string;
   hxFont: string;
   textFont: string;
+  logoFontSize: string;
+  hxFontSize: string;
+  textFontSize: string;
 }
 
 const mapState = (state: RootState) => ({
@@ -32,7 +35,10 @@ const mapState = (state: RootState) => ({
   bodyText: state.bodyText,
   logoFont: state.logoFont,
   hxFont: state.hxFont,
-  textFont: state.textFont
+  textFont: state.textFont,
+  logoFontSize: state.logoFontSize,
+  hxFontSize: state.hxFontSize,
+  textFontSize: state.textFontSize
 });
 
 const mapDispatch = {
@@ -82,6 +88,18 @@ const mapDispatch = {
   changeTextFont: (fnt: string) => ({
     type: 'CHANGE_TEXT_FONT',
     payload: fnt
+  }),
+  changeLogoFontSize: (str: string) => ({
+    type: 'CHANGE_LOGO_FONT_SIZE',
+    payload: str
+  }),
+  changeHxFontSize: (str: string) => ({
+    type: 'CHANGE_HX_FONT_SIZE',
+    payload: str
+  }),
+  changeTextFontSize: (str: string) => ({
+    type: 'CHANGE_TEXT_FONT_SIZE',
+    payload: str
   })
 };
 

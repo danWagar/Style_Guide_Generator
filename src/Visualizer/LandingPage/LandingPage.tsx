@@ -6,7 +6,17 @@ import CSS from 'csstype';
 import './LandingPage.css';
 
 const LandingPage: React.FC<Props> = props => {
-  const { bgColor, hxColor, textColor, heroText, bodyText, hxFont, textFont } = props;
+  const {
+    bgColor,
+    hxColor,
+    textColor,
+    heroText,
+    bodyText,
+    hxFont,
+    hxFontSize,
+    textFont,
+    textFontSize
+  } = props;
   const [editHeroText, setEditHeroText] = useState(false);
   const [editBodyText, setEditBodyText] = useState(false);
   const [bodyTextHeight, setBodyTextHeight] = useState<number | undefined>(0);
@@ -23,11 +33,13 @@ const LandingPage: React.FC<Props> = props => {
   };
   const hxStyle: CSS.Properties = {
     color: colorResultToRgbaString(hxColor),
-    fontFamily: hxFont
+    fontFamily: hxFont,
+    fontSize: hxFontSize
   };
   const textStyle: CSS.Properties = {
     color: colorResultToRgbaString(textColor),
-    fontFamily: textFont
+    fontFamily: textFont,
+    fontSize: textFontSize
   };
 
   const toggleEditHeroText = () => {

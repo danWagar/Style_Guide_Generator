@@ -11,6 +11,7 @@ const Header: React.FC<Props> = props => {
     emphasisColor,
     emphasisComplimentColor,
     logoFont,
+    logoFontSize,
     logoColor,
     logoText,
     changeLogoText
@@ -26,7 +27,8 @@ const Header: React.FC<Props> = props => {
   };
   const logoStyles: CSS.Properties = {
     color: colorResultToRgbaString(logoColor),
-    fontFamily: logoFont
+    fontFamily: logoFont,
+    fontSize: logoFontSize
   };
 
   const toggleEditLogoText = () => {
