@@ -65,17 +65,17 @@ const mapDispatch = {
     type: 'CHANGE_TEXT_COLOR',
     payload: color
   }),
-  changeLogoText: (str: string) => ({
+  changeLogoText: (text: string) => ({
     type: 'CHANGE_LOGO_TEXT',
-    payload: str
+    payload: text
   }),
-  changeHeroText: (str: string) => ({
+  changeHeroText: (text: string) => ({
     type: 'CHANGE_HERO_TEXT',
-    payload: str
+    payload: text
   }),
-  changeBodyText: (str: string) => ({
+  changeBodyText: (text: string) => ({
     type: 'CHANGE_BODY_TEXT',
-    payload: str
+    payload: text
   }),
   changeLogoFont: (fnt: string) => ({
     type: 'CHANGE_LOGO_FONT',
@@ -89,17 +89,17 @@ const mapDispatch = {
     type: 'CHANGE_TEXT_FONT',
     payload: fnt
   }),
-  changeLogoFontSize: (str: string) => ({
+  changeLogoFontSize: (size: string) => ({
     type: 'CHANGE_LOGO_FONT_SIZE',
-    payload: str
+    payload: size
   }),
-  changeHxFontSize: (str: string) => ({
+  changeHxFontSize: (size: string) => ({
     type: 'CHANGE_HX_FONT_SIZE',
-    payload: str
+    payload: size
   }),
-  changeTextFontSize: (str: string) => ({
+  changeTextFontSize: (size: string) => ({
     type: 'CHANGE_TEXT_FONT_SIZE',
-    payload: str
+    payload: size
   })
 };
 

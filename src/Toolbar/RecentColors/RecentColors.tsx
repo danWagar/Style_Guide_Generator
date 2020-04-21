@@ -1,6 +1,6 @@
 import React from 'react';
 import { Props, connector } from '../../reduxInterface';
-import { ColorChangeHandler, ColorResult } from 'react-color';
+import { ColorResult } from 'react-color';
 import { colorResultToRgbaString } from '../../colorConvert';
 import Styles from '../../styles';
 import './RecentColors.css';

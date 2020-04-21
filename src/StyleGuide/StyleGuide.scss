@@ -1,0 +1,54 @@
+main.StyleGuide {
+  box-sizing: border-box;
+  background-color: #eee;
+  height: 100vh;
+  width: 100vw;
+  padding: 0 50px 0 50px;
+}
+
+.StyleGuide_header_colors {
+  display: grid;
+  grid-template-columns: 70% 20% 10%;
+  grid-template-rows: 100px 20px;
+}
+
+.StyleGuide_header_bg_color {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.StyleGuide_emphasis_color {
+  grid-column-start: 2;
+  grid-row: 1;
+}
+
+.StyleGuide_emphasis_compliment_color {
+  grid-column-start: 3;
+  grid-row: 1;
+}
+
+.StyleGuide_body_colors {
+  display: grid;
+  grid-template-columns: 70% 20% 10%;
+  grid-template-rows: 100px 20px;
+}
+
+.StyleGuide_bg_color {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.StyleGuide_hx_color {
+  grid-column-start: 2;
+  grid-row: 1;
+}
+
+.StyleGuide_text_color {
+  grid-column-start: 3;
+  grid-row: 1;
+}
+
+.StyleGuide_typography_container {
+  background-color: #ddd;
+  padding: 30px;
+}

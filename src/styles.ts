@@ -12,6 +12,8 @@ export default class Styles {
   hxColorStyle!: Properties;
   textColorStyle!: Properties;
   colorBoxStyle: Properties;
+  hxFontStyle: Properties;
+  textFontStyle: Properties;
 
   constructor(props: Props) {
     this.headerBGColorStyle = {
@@ -48,6 +50,16 @@ export default class Styles {
       border: '1px solid #c1c1c1',
       borderRadius: '5px'
     };
+
+    this.hxFontStyle = {
+      fontFamily: props.hxFont,
+      fontSize: '64px'
+    };
+
+    this.textFontStyle = {
+      fontFamily: props.textFont,
+      fontSize: '16px'
+    };
   }
 
   getHeaderBGColorStyle(): Properties {
@@ -74,9 +86,10 @@ export default class Styles {
   getColorBoxStyle(): Properties {
     return this.colorBoxStyle;
   }
-  backgroundColorStyle(col: string): Properties {
-    return {
-      backgroundColor: col
-    };
+  getHxFontStyle(): Properties {
+    return this.hxFontStyle;
+  }
+  getTextFontStyle(): Properties {
+    return this.textFontStyle;
   }
 }
