@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
         className={classNames({ Navigation_tab: true, open: styleGuideTabOpen, not_first: true })}
         onClick={goToStyleGuide}
       >
-        Stylesheet
+        Style Guide
       </div>
     </div>
   );
