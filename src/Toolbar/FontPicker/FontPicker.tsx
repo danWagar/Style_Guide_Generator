@@ -1,5 +1,6 @@
 import React, { ReactEventHandler } from 'react';
 import { Props, connector } from '../../reduxInterface';
+import './FontPicker.css';
 
 const FontPicker: React.FC<Props> = props => {
   const { selected, changeLogoFont, changeHxFont, changeTextFont, logoFont, hxFont, textFont } = props;
@@ -42,8 +43,10 @@ const FontPicker: React.FC<Props> = props => {
   console.log(disableSelect());
 
   return (
-    <>
-      <label htmlFor="font">Font:</label>
+    <div>
+      <label className="FontPicker_label" htmlFor="font">
+        Font:
+      </label>
       <select id="font" value={getSelectedValue()} onChange={handleChange} disabled={disableSelect()}>
         <option value="Loto, sans-serif">Loto</option>
         <option value="Montserrat, sans-serif">Montserrat</option>
@@ -51,7 +54,7 @@ const FontPicker: React.FC<Props> = props => {
         <option value="Raleway, sans-serif">Raleway</option>
         <option value="Roboto, sans-serif">Roboto</option>
       </select>
-    </>
+    </div>
   );
 };
 

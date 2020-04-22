@@ -1,0 +1,31 @@
+@import '../variables';
+
+.Navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: start;
+  height: $navigation_bar_height;
+  width: calc(100vw);
+  background-color: black;
+  color: white;
+}
+
+.Navigation_tab {
+  display: grid;
+  place-content: center center;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: $primary_font;
+  background-color: #1f1f1f;
+}
+
+.not_first {
+}
+
+.open {
+  z-index: 1;
+  border-top-right-radius: 10px;
+  background-color: #2f2f2f;
+}

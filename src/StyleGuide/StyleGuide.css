@@ -1,4 +1,6 @@
 main.StyleGuide {
+  position: fixed;
+  top: 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #eee;

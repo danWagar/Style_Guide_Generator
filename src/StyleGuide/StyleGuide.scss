@@ -1,4 +1,8 @@
+@import '../variables';
+
 main.StyleGuide {
+  position: fixed;
+  top: $navigation_bar_height;
   box-sizing: border-box;
   background-color: #eee;
   height: 100vh;

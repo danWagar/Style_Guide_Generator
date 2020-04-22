@@ -10,7 +10,7 @@ label {
   position: fixed;
   bottom: 0;
   right: 0;
-  height: calc(100vh - 20px);
+  height: calc(100vh - 30px);
   width: 100vw;
   background-color: black;
   z-index: 1;
@@ -18,7 +18,16 @@ label {
 
 .Toolbar_toggle {
   position: fixed;
-  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
   width: 100vw;
   top: 0;
   left: 0;
@@ -31,6 +40,19 @@ label {
   padding: 5px;
 }
 
+.Toolbar_fonts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .Toolbar_color_picker {
   position: fixed;
   bottom: 0;
@@ -41,9 +63,8 @@ label {
     display: none;
   }
   .Toolbar {
-    top: 0;
+    top: 30px;
     right: 0;
-    height: 100vh;
     width: 220px;
   }
 }

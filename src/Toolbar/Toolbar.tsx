@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Props, connector } from '../reduxInterface';
 import { SketchPicker, ColorResult } from 'react-color';
 import Selector from './Selector/Selector';
@@ -30,6 +31,8 @@ const Toolbar: React.FC<Props> = props => {
     changeHxFont,
     changeTextFont
   } = props;
+
+  const history = useHistory();
 
   const initialColors = [
     bgColor,
@@ -113,10 +116,15 @@ const Toolbar: React.FC<Props> = props => {
     setShowToolbar(!showToolbar);
   };
 
+  const goToStylesheet = (e: React.MouseEvent<HTMLDivElement>) => {
+    history.push('/style-guide');
+  };
+
   return (
     <>
-      <div className="Toolbar_toggle" onClick={toggleHideToolbar}>
-        Toolbar
+      <div className="Toolbar_toggle">
+        <div onClick={toggleHideToolbar}>Toolbar</div>
+        <div onClick={goToStylesheet}>Stylesheet</div>
       </div>
       {!showToolbar && (
         <div className="Toolbar">

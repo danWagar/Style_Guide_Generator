@@ -1,5 +1,6 @@
 import React from 'react';
 import { Props, connector } from '../../reduxInterface';
+import '../FontPicker/FontPicker.css';
 
 const FontSizePicker: React.FC<Props> = props => {
   const {
@@ -95,12 +96,14 @@ const FontSizePicker: React.FC<Props> = props => {
   console.log(disableSelect());
 
   return (
-    <>
-      <label htmlFor="font_size">Font:</label>
+    <div>
+      <label className="FontPicker_label" htmlFor="font_size">
+        Size:
+      </label>
       <select id="font_size" value={getSelectedValue()} onChange={handleChange} disabled={disableSelect()}>
         {generateOptionElements()}
       </select>
-    </>
+    </div>
   );
 };
 

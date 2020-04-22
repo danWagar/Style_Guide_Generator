@@ -10,8 +10,7 @@
 @media (min-width: 750px) {
   .Visualizer_container {
     box-sizing: border-box;
-    top: 0;
+    top: #{$toolbar_toggle_height};
     width: calc(100% - 220px);
-    height: 100vh;
   }
 }

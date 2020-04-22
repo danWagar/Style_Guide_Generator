@@ -19,6 +19,9 @@ label {
 
 .Toolbar_toggle {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: $toolbar_toggle_height;
   width: 100vw;
   top: 0;
@@ -32,6 +35,12 @@ label {
   padding: 5px;
 }
 
+.Toolbar_fonts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .Toolbar_color_picker {
   position: fixed;
   bottom: 0;
@@ -43,9 +52,8 @@ label {
   }
 
   .Toolbar {
-    top: 0;
+    top: $toolbar_toggle_height;
     right: 0;
-    height: 100vh;
-    width: 220px;
+    width: $toolbar_width;
   }
 }
