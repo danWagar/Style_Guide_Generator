@@ -96,7 +96,7 @@ const FontSizePicker: React.FC<Props> = props => {
   console.log(disableSelect());
 
   return (
-    <div>
+    <div className="FontPicker">
       <label className="FontPicker_label" htmlFor="font_size">
         Size:
       </label>

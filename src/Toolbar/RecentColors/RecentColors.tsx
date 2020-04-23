@@ -28,7 +28,6 @@ const RecentColors: React.FC<IRecentColors> = props => {
 
   return (
     <div className="RecentColors">
-      Recent Colors:
       <ul>{generateColorBoxes()}</ul>
     </div>
   );

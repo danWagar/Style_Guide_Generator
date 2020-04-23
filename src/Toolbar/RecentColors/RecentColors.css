@@ -1,6 +1,8 @@
 .RecentColors {
   font-family: "Open Sans", sans-serif;
   color: white;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .RecentColors ul {

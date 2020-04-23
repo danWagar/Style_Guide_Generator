@@ -15,7 +15,6 @@ const FontWeightPicker: React.FC<Props> = props => {
   } = props;
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(selected);
     switch (selected) {
       case 'Logo':
         changeLogoFontWeight(Number(e.currentTarget.value));
@@ -51,7 +50,7 @@ const FontWeightPicker: React.FC<Props> = props => {
   };
 
   const generateOptionElements = () => {
-    const selectedFontWeights = getFontWeights(props);
+    const selectedFontWeights = getFontWeights(props.selected, props.logoFont, props.hxFont, props.textFont);
     return (
       <>
         {selectedFontWeights.map(weight => (
@@ -62,7 +61,7 @@ const FontWeightPicker: React.FC<Props> = props => {
   };
 
   return (
-    <div>
+    <div className="FontPicker">
       <label className="FontPicker_label" htmlFor="font_weight">
         Weight:
       </label>

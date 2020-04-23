@@ -62,8 +62,10 @@ const Toolbar: React.FC<Props> = props => {
   };
 
   const handleColorChangeComplete = (col: ColorResult) => {
-    generateRecentColors(col);
+    if (selected) generateRecentColors(col);
+
     setSelectedColor(col);
+
     switch (selected) {
       case 'Header Background':
         changeHeaderBGColor(col);
@@ -123,7 +125,6 @@ const Toolbar: React.FC<Props> = props => {
         <div className="Toolbar">
           <div className="Toolbar_top">
             <Selector />
-            <RecentColors colors={recentColors} handleChangeComplete={handleColorChangeComplete} />
           </div>
           <div className="Toolbar_fonts">
             <FontPicker />
@@ -131,7 +132,13 @@ const Toolbar: React.FC<Props> = props => {
             <FontWeightPicker />
           </div>
           <div className="Toolbar_color_picker">
-            <SketchPicker color={selectedColor.rgb} onChangeComplete={handleColorChangeComplete} />
+            <SketchPicker
+              color={selectedColor.rgb}
+              presetColors={[]}
+              onChangeComplete={handleColorChangeComplete}
+              width="215px"
+            />
+            <RecentColors colors={recentColors} handleChangeComplete={handleColorChangeComplete} />
           </div>
         </div>
       )}

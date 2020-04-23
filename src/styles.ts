@@ -45,8 +45,8 @@ export default class Styles {
     };
 
     this.colorBoxStyle = {
-      height: '20px',
-      width: '20px',
+      height: '18px',
+      width: '18px',
       border: '1px solid #c1c1c1',
       borderRadius: '5px'
     };

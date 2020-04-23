@@ -4,10 +4,22 @@ main.StyleGuide {
   position: fixed;
   top: $navigation_bar_height;
   box-sizing: border-box;
-  background-color: #eee;
-  height: 100vh;
+  height: calc(100vh - #{$navigation_bar_height});
   width: 100vw;
-  padding: 0 50px 0 50px;
+  padding: 0 50px 50px 50px;
+  background-color: #eee;
+  overflow: auto;
+}
+
+.StyleGuide_colors_container,
+.StyleGuide_typography_container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.StyleGuide_header_colors,
+.StyleGuide_body_colors {
+  padding-bottom: 10px;
 }
 
 .StyleGuide_header_colors {
@@ -69,6 +81,50 @@ main.StyleGuide {
 }
 
 .StyleGuide_typography_container {
+  display: grid;
+  grid-template-columns: 1.2fr 3.8fr;
+  grid-template-rows: 1fr 1fr;
+  border: 1px solid #c1c1c1;
   background-color: #ddd;
-  padding: 30px;
+
+  & div {
+    height: 100px;
+    padding: 15px;
+  }
+}
+
+.StyleGuide_heading_font_details,
+.StyleGuide_text_font_details {
+  display: flex;
+  flex-direction: column;
+  background-color: #ccc;
+  font-family: $primary_font;
+  border-right: 1px solid #c1c1c1;
+}
+
+.StyleGuide_heading_font,
+.StyleGuide_text_font {
+  align-self: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.StyleGuide_heading_font_details {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.StyleGuide_heading_font {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.StyleGuide_text_font_details {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.StyleGuide_text_font {
+  grid-column: 2;
+  grid-row: 2;
 }

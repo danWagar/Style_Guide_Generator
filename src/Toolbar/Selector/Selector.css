@@ -7,6 +7,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Open Sans", sans-serif;
+  font-size: 15px;
   color: white;
 }
 
@@ -14,11 +15,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 
 .Selector_list li div {
   margin-right: 7px;
+}
+
+.selected {
+  border: 1px solid blue;
 }
 /*# sourceMappingURL=Selector.css.map */

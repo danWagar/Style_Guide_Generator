@@ -43,7 +43,7 @@ const FontPicker: React.FC<Props> = props => {
   console.log(disableSelect());
 
   return (
-    <div>
+    <div className="FontPicker">
       <label className="FontPicker_label" htmlFor="font">
         Font:
       </label>

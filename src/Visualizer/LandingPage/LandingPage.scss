@@ -2,8 +2,8 @@
 
 .LandingPage_hero_text {
   font-weight: normal;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 1024px) {
@@ -20,8 +20,7 @@
   }
 
   .LandingPage_hero_text {
-    padding-bottom: 3.5rem;
-    padding-top: 0;
+    padding: 0;
   }
 
   .LandingPage_body_text_container {

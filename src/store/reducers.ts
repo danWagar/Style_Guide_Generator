@@ -56,7 +56,7 @@ const initialState: VisualizerState = {
   hxFontSize: '56px',
   textFontSize: '16px',
   logoFontWeight: 400,
-  hxFontWeight: 600,
+  hxFontWeight: 400,
   textFontWeight: 400
 };
 

@@ -11,9 +11,13 @@ label {
   position: fixed;
   bottom: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: calc(100vh - #{$toolbar_toggle_height});
   width: 100vw;
-  background-color: black;
+  background-color: #1d1d1d;
+  border-left: 2px solid #2f2f2f;
   z-index: 1;
 }
 
@@ -42,8 +46,27 @@ label {
 }
 
 .Toolbar_color_picker {
-  position: fixed;
-  bottom: 0;
+  display: grid;
+  place-content: center;
+  align-self: center;
+  width: 100%;
+  background-color: #2b2b2b;
+}
+
+.sketch-picker {
+  box-sizing: border-box !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  padding: 10px 10px 0px 10px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.sketch-picker div:nth-child(2) div div:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.flexbox-fix div span {
+  color: white !important;
 }
 
 @media (min-width: 750px) {

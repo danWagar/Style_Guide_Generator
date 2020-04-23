@@ -41,14 +41,15 @@ h6 {
 h1 {
   font-size: 2em;
   font-style: bold;
+  line-height: 3em;
+}
+
+h2 {
+  line-height: 1.5em;
 }
 
 p {
   font-family: $primary_font;
-}
-
-.selected {
-  border: 1px solid blue;
 }
 
 .btn {
@@ -73,6 +74,10 @@ p {
 
 .link_color {
   color: $link_color;
+}
+
+.weighted_text {
+  font-weight: 600;
 }
 
 @media (min-width: 750px) {
