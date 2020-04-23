@@ -14,7 +14,10 @@ const StyleGuide: React.FC<Props> = props => {
     textColor,
     logoFont,
     hxFont,
-    textFont
+    textFont,
+    logoFontSize,
+    hxFontSize,
+    textFontSize
   } = props;
 
   const style = new Styles(props);

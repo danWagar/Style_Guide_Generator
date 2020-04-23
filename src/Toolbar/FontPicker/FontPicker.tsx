@@ -30,7 +30,7 @@ const FontPicker: React.FC<Props> = props => {
       case 'Text':
         return textFont;
       default:
-        return 'Loto, sans-serif';
+        return 'Lato, sans-serif';
     }
   };
 
@@ -48,7 +48,7 @@ const FontPicker: React.FC<Props> = props => {
         Font:
       </label>
       <select id="font" value={getSelectedValue()} onChange={handleChange} disabled={disableSelect()}>
-        <option value="Loto, sans-serif">Loto</option>
+        <option value="Lato, sans-serif">Lato</option>
         <option value="Montserrat, sans-serif">Montserrat</option>
         <option value="Open Sans, sans-serif">Open Sans</option>
         <option value="Raleway, sans-serif">Raleway</option>

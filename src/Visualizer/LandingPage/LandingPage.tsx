@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
+import Styles from '../../styles';
 import { colorResultToRgbaString } from '../../colorConvert';
 import CSS from 'csstype';
 import './LandingPage.css';
@@ -22,6 +23,8 @@ const LandingPage: React.FC<Props> = props => {
   const [bodyTextHeight, setBodyTextHeight] = useState<number | undefined>(0);
   const ref = useRef<HTMLParagraphElement | null>(null) as React.MutableRefObject<HTMLParagraphElement>;
 
+  const style = new Styles(props);
+
   useEffect(() => {
     if (!ref.current) return;
     console.log(ref.current.clientHeight);
@@ -33,13 +36,11 @@ const LandingPage: React.FC<Props> = props => {
   };
   const hxStyle: CSS.Properties = {
     color: colorResultToRgbaString(hxColor),
-    fontFamily: hxFont,
-    fontSize: hxFontSize
+    ...style.hxFontStyle
   };
   const textStyle: CSS.Properties = {
     color: colorResultToRgbaString(textColor),
-    fontFamily: textFont,
-    fontSize: textFontSize
+    ...style.textFontStyle
   };
 
   const toggleEditHeroText = () => {

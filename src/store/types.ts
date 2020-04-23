@@ -20,23 +20,26 @@ interface ColorResult {
 }
 
 export interface VisualizerState {
-  selected?: string | null | undefined;
-  headerBGColor?: ColorResult;
-  emphasisColor?: ColorResult;
-  emphasisComplimentColor?: ColorResult;
-  bgColor?: ColorResult;
-  logoColor?: ColorResult;
-  hxColor?: ColorResult;
-  textColor?: ColorResult;
-  logoText?: string;
-  heroText?: string;
-  bodyText?: string;
-  logoFont?: string;
-  hxFont?: string;
-  textFont?: string;
+  selected: string | null | undefined;
+  headerBGColor: ColorResult;
+  emphasisColor: ColorResult;
+  emphasisComplimentColor: ColorResult;
+  bgColor: ColorResult;
+  logoColor: ColorResult;
+  hxColor: ColorResult;
+  textColor: ColorResult;
+  logoText: string;
+  heroText: string;
+  bodyText: string;
+  logoFont: string;
+  hxFont: string;
+  textFont: string;
   logoFontSize: string;
   hxFontSize: string;
   textFontSize: string;
+  logoFontWeight: number;
+  hxFontWeight: number;
+  textFontWeight: number;
 }
 
 //Actions
@@ -125,7 +128,7 @@ interface ChangeBodyFont {
 }
 
 export const CHANGE_LOGO_FONT_SIZE = 'CHANGE_LOGO_FONT_SIZE';
-interface ChangelogoFontSize {
+interface ChangeLogoFontSize {
   type: typeof CHANGE_LOGO_FONT_SIZE;
   payload: string;
 }
@@ -140,6 +143,24 @@ export const CHANGE_TEXT_FONT_SIZE = 'CHANGE_TEXT_FONT_SIZE';
 interface ChangeTextFontSize {
   type: typeof CHANGE_TEXT_FONT_SIZE;
   payload: string;
+}
+
+export const CHANGE_LOGO_FONT_WEIGHT = 'CHANGE_LOGO_FONT_WEIGHT';
+interface ChangeLogoFontWeight {
+  type: typeof CHANGE_LOGO_FONT_WEIGHT;
+  payload: number;
+}
+
+export const CHANGE_HX_FONT_WEIGHT = 'CHANGE_HX_FONT_WEIGHT';
+interface ChangeHxFontWeight {
+  type: typeof CHANGE_HX_FONT_WEIGHT;
+  payload: number;
+}
+
+export const CHANGE_TEXT_FONT_WEIGHT = 'CHANGE_TEXT_FONT_WEIGHT';
+interface ChangeTextFontWeight {
+  type: typeof CHANGE_TEXT_FONT_WEIGHT;
+  payload: number;
 }
 
 export type VisualizerActionTypes =
@@ -157,8 +178,11 @@ export type VisualizerActionTypes =
   | ChangeLogoFont
   | ChangeHeroFont
   | ChangeBodyFont
-  | ChangelogoFontSize
+  | ChangeLogoFontSize
   | ChangeHxFontSize
-  | ChangeTextFontSize;
+  | ChangeTextFontSize
+  | ChangeLogoFontWeight
+  | ChangeHxFontWeight
+  | ChangeTextFontWeight;
 
 //

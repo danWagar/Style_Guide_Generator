@@ -73,7 +73,7 @@ const FontSizePicker: React.FC<Props> = props => {
       case 'Text':
         return textFontSize;
       default:
-        return 'Loto, sans-serif';
+        return 'Lato, sans-serif';
     }
   };
 

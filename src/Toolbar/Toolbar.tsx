@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Props, connector } from '../reduxInterface';
 import { SketchPicker, ColorResult } from 'react-color';
 import Selector from './Selector/Selector';
 import RecentColors from './RecentColors/RecentColors';
 import FontPicker from './FontPicker/FontPicker';
 import FontSizePicker from './FontSizePicker/FontSizePicker';
+import FontWeightPicker from './FontWeightPicker/FontWeightPicker';
 import './Toolbar.css';
 import { changeHxFont } from '../store/action';
 
@@ -31,8 +31,6 @@ const Toolbar: React.FC<Props> = props => {
     changeHxFont,
     changeTextFont
   } = props;
-
-  const history = useHistory();
 
   const initialColors = [
     bgColor,
@@ -116,15 +114,10 @@ const Toolbar: React.FC<Props> = props => {
     setShowToolbar(!showToolbar);
   };
 
-  const goToStylesheet = (e: React.MouseEvent<HTMLDivElement>) => {
-    history.push('/style-guide');
-  };
-
   return (
     <>
       <div className="Toolbar_toggle">
         <div onClick={toggleHideToolbar}>Toolbar</div>
-        <div onClick={goToStylesheet}>Stylesheet</div>
       </div>
       {!showToolbar && (
         <div className="Toolbar">
@@ -135,6 +128,7 @@ const Toolbar: React.FC<Props> = props => {
           <div className="Toolbar_fonts">
             <FontPicker />
             <FontSizePicker />
+            <FontWeightPicker />
           </div>
           <div className="Toolbar_color_picker">
             <SketchPicker color={selectedColor.rgb} onChangeComplete={handleColorChangeComplete} />

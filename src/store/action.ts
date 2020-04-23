@@ -16,7 +16,10 @@ import {
   CHANGE_TEXT_FONT,
   CHANGE_TEXT_FONT_SIZE,
   CHANGE_HX_FONT_SIZE,
-  CHANGE_LOGO_FONT_SIZE
+  CHANGE_LOGO_FONT_SIZE,
+  CHANGE_TEXT_FONT_WEIGHT,
+  CHANGE_HX_FONT_WEIGHT,
+  CHANGE_LOGO_FONT_WEIGHT
 } from './types';
 import { ColorResult } from 'react-color';
 
@@ -136,5 +139,26 @@ export function changeTextFontSize(newStr: string): VisualizerActionTypes {
   return {
     type: CHANGE_TEXT_FONT_SIZE,
     payload: newStr
+  };
+}
+
+export function changeLogoFontWeight(newWeight: number): VisualizerActionTypes {
+  return {
+    type: CHANGE_LOGO_FONT_WEIGHT,
+    payload: newWeight
+  };
+}
+
+export function changeHxFontWeight(newWeight: number): VisualizerActionTypes {
+  return {
+    type: CHANGE_HX_FONT_WEIGHT,
+    payload: newWeight
+  };
+}
+
+export function changeTextFontWeight(newWeight: number): VisualizerActionTypes {
+  return {
+    type: CHANGE_TEXT_FONT_WEIGHT,
+    payload: newWeight
   };
 }

@@ -53,12 +53,14 @@ export default class Styles {
 
     this.hxFontStyle = {
       fontFamily: props.hxFont,
-      fontSize: '64px'
+      fontSize: props.hxFontSize,
+      fontWeight: props.hxFontWeight
     };
 
     this.textFontStyle = {
       fontFamily: props.textFont,
-      fontSize: '16px'
+      fontSize: props.textFontSize,
+      fontWeight: props.textFontWeight
     };
   }
 

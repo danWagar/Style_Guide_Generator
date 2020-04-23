@@ -17,7 +17,10 @@ import {
   CHANGE_TEXT_FONT,
   CHANGE_LOGO_FONT_SIZE,
   CHANGE_HX_FONT_SIZE,
-  CHANGE_TEXT_FONT_SIZE
+  CHANGE_TEXT_FONT_SIZE,
+  CHANGE_TEXT_FONT_WEIGHT,
+  CHANGE_HX_FONT_WEIGHT,
+  CHANGE_LOGO_FONT_WEIGHT
 } from './types';
 
 const initialState: VisualizerState = {
@@ -51,7 +54,10 @@ const initialState: VisualizerState = {
   textFont: 'Open Sans, sans-serif',
   logoFontSize: '32px',
   hxFontSize: '56px',
-  textFontSize: '16px'
+  textFontSize: '16px',
+  logoFontWeight: 400,
+  hxFontWeight: 600,
+  textFontWeight: 400
 };
 
 export function vizualizerReducer(state = initialState, action: VisualizerActionTypes): VisualizerState {
@@ -132,7 +138,6 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
         logoFontSize: action.payload
       };
     case CHANGE_HX_FONT_SIZE:
-      console.log(action.payload);
       return {
         ...state,
         hxFontSize: action.payload
@@ -141,6 +146,21 @@ export function vizualizerReducer(state = initialState, action: VisualizerAction
       return {
         ...state,
         textFontSize: action.payload
+      };
+    case CHANGE_LOGO_FONT_WEIGHT:
+      return {
+        ...state,
+        logoFontWeight: action.payload
+      };
+    case CHANGE_HX_FONT_WEIGHT:
+      return {
+        ...state,
+        hxFontWeight: action.payload
+      };
+    case CHANGE_TEXT_FONT_WEIGHT:
+      return {
+        ...state,
+        textFontWeight: action.payload
       };
 
     default:

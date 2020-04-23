@@ -19,16 +19,24 @@ main.StyleGuide {
 .StyleGuide_header_bg_color {
   grid-column: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-left: 1px solid #c1c1c1;
 }
 
 .StyleGuide_emphasis_color {
   grid-column-start: 2;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
 }
 
 .StyleGuide_emphasis_compliment_color {
   grid-column-start: 3;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
 }
 
 .StyleGuide_body_colors {
@@ -40,16 +48,24 @@ main.StyleGuide {
 .StyleGuide_bg_color {
   grid-column: 1;
   grid-row: 1;
-}
-
-.StyleGuide_hx_color {
-  grid-column-start: 2;
-  grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-left: 1px solid #c1c1c1;
 }
 
 .StyleGuide_text_color {
+  grid-column-start: 2;
+  grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.StyleGuide_hx_color {
   grid-column-start: 3;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
 }
 
 .StyleGuide_typography_container {

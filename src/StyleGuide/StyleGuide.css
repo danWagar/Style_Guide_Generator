@@ -23,6 +23,9 @@ main.StyleGuide {
   grid-column: 1;
   -ms-grid-row: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-left: 1px solid #c1c1c1;
 }
 
 .StyleGuide_emphasis_color {
@@ -30,6 +33,8 @@ main.StyleGuide {
       grid-column-start: 2;
   -ms-grid-row: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
 }
 
 .StyleGuide_emphasis_compliment_color {
@@ -37,6 +42,9 @@ main.StyleGuide {
       grid-column-start: 3;
   -ms-grid-row: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
 }
 
 .StyleGuide_body_colors {
@@ -53,20 +61,28 @@ main.StyleGuide {
   grid-column: 1;
   -ms-grid-row: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-left: 1px solid #c1c1c1;
 }
 
-.StyleGuide_hx_color {
+.StyleGuide_text_color {
   -ms-grid-column: 2;
       grid-column-start: 2;
   -ms-grid-row: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
 }
 
-.StyleGuide_text_color {
+.StyleGuide_hx_color {
   -ms-grid-column: 3;
       grid-column-start: 3;
   -ms-grid-row: 1;
   grid-row: 1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
 }
 
 .StyleGuide_typography_container {
