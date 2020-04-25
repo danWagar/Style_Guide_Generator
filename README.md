@@ -15,7 +15,7 @@ This project is ongoing and all content and functionality is subject to change.
 * React Color
 
 ### Visualizer Screen Shot  
-<img src="images/Visualizer_screen_shot.JPG" width="600" alt="Visualizer Screen Shot" />
+<img src="images/Visualizer_screen_shot.JPG" width="800" alt="Visualizer Screen Shot" />
 
 ### Style Guide Screen Shot  
-<img src="images/Style_Guide_screen_shot.JPG" width="600" alt="Style Guide Screen Shot" />
+<img src="images/StyleGuide_screen_shot.JPG" width="800" alt="Style Guide Screen Shot" />
