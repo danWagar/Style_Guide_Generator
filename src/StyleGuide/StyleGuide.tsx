@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Props, connector } from '../reduxInterface';
 import Styles from '../styles';
 import './StyleGuide.css';
