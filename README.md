@@ -6,8 +6,16 @@ Visually test out different color and typography combinations, with freedom to c
 
 This project is ongoing and all content and functionality is subject to change.
 
-### Visualizer Screen Shot  
-![Visualizer Screen Shot](https://raw.githubusercontent.com/danWagar/Style_Guide_Generator/tree/master/images/Visualizer_screen_shot.jpeg)
+### Technologies
 
-###Style Guide Screen Shot  
-![Style Guide Screen Shot](https://raw.githubusercontent.com/danWagar/Style_Guide_Generator/tree/master/images/StyleGuide_screen_shot.jpeg)
+* React
+* React Hooks
+* TypeScript
+* Redux
+* React Color
+
+### Visualizer Screen Shot  
+![Visualizer Screen Shot](/images/Visualizer_screen_shot.jpeg)
+
+### Style Guide Screen Shot  
+![Style Guide Screen Shot](/images/StyleGuide_screen_shot.jpeg)
