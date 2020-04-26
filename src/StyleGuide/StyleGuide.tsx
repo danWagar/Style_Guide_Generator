@@ -1,6 +1,6 @@
 import React from 'react';
 import { Props, connector } from '../reduxInterface';
-import { styles } from '../styles';
+import { useStyles } from '../useStyles';
 import './StyleGuide.css';
 
 const StyleGuide: React.FC<Props> = props => {
@@ -22,6 +22,8 @@ const StyleGuide: React.FC<Props> = props => {
     hxFontWeight,
     textFontWeight
   } = props;
+
+  const styles = useStyles();
 
   return (
     <main className="StyleGuide">

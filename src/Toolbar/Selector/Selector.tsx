@@ -1,6 +1,6 @@
 import React from 'react';
 import { Props, connector } from '../../reduxInterface';
-import { styles } from '../../styles';
+import { useStyles } from '../../useStyles';
 import CSS from 'csstype';
 import './Selector.css';
 
@@ -12,6 +12,8 @@ const Selector: React.FC<Props> = props => {
     if (selected === target) changeSelected(null);
     else changeSelected(e.currentTarget.dataset.id);
   };
+
+  const styles = useStyles();
 
   return (
     <ul className="Selector_list">

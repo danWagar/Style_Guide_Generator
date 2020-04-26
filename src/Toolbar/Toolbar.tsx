@@ -119,7 +119,7 @@ const Toolbar: React.FC<Props> = props => {
   return (
     <>
       <div className="Toolbar_toggle">
-        <div onClick={toggleHideToolbar}>Toolbar</div>
+        <div onClick={toggleHideToolbar}>Hide Toolbar</div>
       </div>
       {!showToolbar && (
         <div className="Toolbar">

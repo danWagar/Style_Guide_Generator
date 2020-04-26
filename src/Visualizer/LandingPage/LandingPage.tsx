@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
-import { styles } from '../../styles';
+import { useStyles } from '../../useStyles';
 import { colorResultToRgbaString } from '../../colorConvert';
 import CSS from 'csstype';
 import './LandingPage.css';
@@ -23,6 +23,8 @@ const LandingPage: React.FC<Props> = props => {
   const [editBodyText, setEditBodyText] = useState(false);
   const [bodyTextHeight, setBodyTextHeight] = useState<number | undefined>(0);
   const ref = useRef<HTMLParagraphElement | null>(null) as React.MutableRefObject<HTMLParagraphElement>;
+
+  const styles = useStyles();
 
   useEffect(() => {
     if (!ref.current) return;

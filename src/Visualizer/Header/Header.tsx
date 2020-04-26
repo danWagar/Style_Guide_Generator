@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
 import { colorResultToRgbaString } from '../../colorConvert';
-import { styles } from '../../styles';
+import { useStyles } from '../../useStyles';
 import CSS from 'csstype';
 import './Header.css';
 
@@ -19,6 +19,8 @@ const Header: React.FC<Props> = props => {
     changeLogoText
   } = props;
   const [editLogoText, setEditLogoText] = useState<boolean>(false);
+
+  const styles = useStyles();
 
   const headerStyles: CSS.Properties = {
     backgroundColor: colorResultToRgbaString(headerBGColor)
