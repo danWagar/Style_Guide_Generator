@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
-import Styles from '../../styles';
+import { styles } from '../../styles';
 import { colorResultToRgbaString } from '../../colorConvert';
 import CSS from 'csstype';
 import './LandingPage.css';
 
 const LandingPage: React.FC<Props> = props => {
   const {
+    selected,
     bgColor,
     hxColor,
     textColor,
@@ -23,8 +24,6 @@ const LandingPage: React.FC<Props> = props => {
   const [bodyTextHeight, setBodyTextHeight] = useState<number | undefined>(0);
   const ref = useRef<HTMLParagraphElement | null>(null) as React.MutableRefObject<HTMLParagraphElement>;
 
-  const style = new Styles(props);
-
   useEffect(() => {
     if (!ref.current) return;
     console.log(ref.current.clientHeight);
@@ -36,11 +35,11 @@ const LandingPage: React.FC<Props> = props => {
   };
   const hxStyle: CSS.Properties = {
     color: colorResultToRgbaString(hxColor),
-    ...style.hxFontStyle
+    ...styles.hxFontStyle
   };
   const textStyle: CSS.Properties = {
     color: colorResultToRgbaString(textColor),
-    ...style.textFontStyle
+    ...styles.textFontStyle
   };
 
   const toggleEditHeroText = () => {
@@ -65,7 +64,10 @@ const LandingPage: React.FC<Props> = props => {
       <div className="LandingPage_container">
         <div onClick={handleHeroTextClick}>
           {!editHeroText ? (
-            <h1 className="LandingPage_hero_text" style={hxStyle}>
+            <h1
+              className="LandingPage_hero_text"
+              style={{ ...hxStyle, ...(selected === 'Hx' && { ...styles.selectedOutline }) }}
+            >
               {heroText}
             </h1>
           ) : (
@@ -80,7 +82,7 @@ const LandingPage: React.FC<Props> = props => {
         </div>
         <div className="LandingPage_body_text_container" onClick={handleBodyTextClick}>
           {!editBodyText ? (
-            <p ref={ref} style={textStyle}>
+            <p ref={ref} style={{ ...textStyle, ...(selected === 'Text' && { ...styles.selectedOutline }) }}>
               {bodyText}
             </p>
           ) : (

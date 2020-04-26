@@ -3,7 +3,7 @@ import { Props, connector } from '../../reduxInterface';
 import './Input.css';
 import CSS from 'csstype';
 
-interface IInput extends Props {
+interface iInput extends Props {
   parentStateCallback: () => void;
   toChange: string;
   defaultValue?: string;
@@ -13,7 +13,7 @@ interface IInput extends Props {
   height?: number;
 }
 
-const Input: React.FC<IInput> = props => {
+const Input: React.FC<iInput> = props => {
   const {
     parentStateCallback,
     toChange,
@@ -38,8 +38,8 @@ const Input: React.FC<IInput> = props => {
   ) => {
     console.log(toChange);
     let input = e.currentTarget.value;
-    input = checkEmptyStr(input);
     input = input.trim();
+    input = checkEmptyStr(input);
     console.log(input);
     switch (toChange) {
       case 'Logo':

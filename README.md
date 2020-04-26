@@ -7,7 +7,7 @@ Visually test out different color and typography combinations, with freedom to c
 This project is ongoing and all content and functionality is subject to change.
 
 ###Visualizer Screen Shot
-![Visualizer Screen Shot](https://raw.githubusercontent.com/danWagar/Style_Guide_Generator/images/Visualizer_screen_shot)
+![Visualizer Screen Shot](/images/Visualizer_screen_shot)
 
 ###Style Guide Screen Shot
-![Style Guide Screen Shot](https://raw.githubusercontent.com/danWagar/Style_Guide_Generator/images/StyleGuide_screen_shot)
+![Style Guide Screen Shot](/images/StyleGuide_screen_shot)

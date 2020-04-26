@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
 import { colorResultToRgbaString } from '../../colorConvert';
+import { styles } from '../../styles';
 import CSS from 'csstype';
 import './Header.css';
 
 const Header: React.FC<Props> = props => {
   const {
+    selected,
     headerBGColor,
     emphasisColor,
     emphasisComplimentColor,
@@ -44,7 +46,10 @@ const Header: React.FC<Props> = props => {
     <header className="Header" style={headerStyles}>
       <div className="Header_logo_containter" onClick={handleLogoClick}>
         {!editLogoText ? (
-          <h1 className="Header_logo_text" style={logoStyles}>
+          <h1
+            className="Header_logo_text"
+            style={{ ...logoStyles, ...(selected === 'Logo' && { ...styles.selectedOutline }) }}
+          >
             {logoText}
           </h1>
         ) : (

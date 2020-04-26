@@ -1,6 +1,6 @@
 import React from 'react';
 import { Props, connector } from '../reduxInterface';
-import Styles from '../styles';
+import { styles } from '../styles';
 import './StyleGuide.css';
 
 const StyleGuide: React.FC<Props> = props => {
@@ -23,8 +23,6 @@ const StyleGuide: React.FC<Props> = props => {
     textFontWeight
   } = props;
 
-  const style = new Styles(props);
-
   return (
     <main className="StyleGuide">
       <section className="StyleGuide_colors">
@@ -32,23 +30,23 @@ const StyleGuide: React.FC<Props> = props => {
         <div className="StyleGuide_colors_container">
           <h2>Header</h2>
           <div className="StyleGuide_header_colors">
-            <div className="StyleGuide_header_bg_color" style={style.headerBGColorStyle}></div>
+            <div className="StyleGuide_header_bg_color" style={styles.headerBGColorStyle}></div>
             <p className="StyleGuide_header_bg_color_value">{headerBGColor.hex}</p>
-            <div className="StyleGuide_emphasis_color" style={style.emphasisColorStyle}></div>
+            <div className="StyleGuide_emphasis_color" style={styles.emphasisColorStyle}></div>
             <p className="StyleGuide_emphasis_color_value">{emphasisColor.hex}</p>
             <div
               className="StyleGuide_emphasis_compliment_color"
-              style={style.emphasisComplimentColorStyle}
+              style={styles.emphasisComplimentColorStyle}
             ></div>
             <p className="StyleGuide_emphasis_compliment_color_value">{emphasisComplimentColor.hex}</p>
           </div>
           <h2>Body</h2>
           <div className="StyleGuide_body_colors">
-            <div className="StyleGuide_bg_color" style={style.getBGColorStyle()}></div>
+            <div className="StyleGuide_bg_color" style={styles.bgColorStyle}></div>
             <p className="StyleGuide_bg_color_value">{bgColor.hex}</p>
-            <div className="StyleGuide_hx_color" style={style.getHxColorStyle()}></div>
+            <div className="StyleGuide_hx_color" style={styles.hxColorStyle}></div>
             <p className="StyleGuide_hx_color_value">{hxColor.hex}</p>
-            <div className="StyleGuide_text_color" style={style.getTextColorStyle()}></div>
+            <div className="StyleGuide_text_color" style={styles.textColorStyle}></div>
             <p className="StyleGuide_text_color_value">{textColor.hex}</p>
           </div>
         </div>
@@ -62,7 +60,7 @@ const StyleGuide: React.FC<Props> = props => {
             <span>Size: {hxFontSize}</span>
             <span>Weight: {hxFontWeight}</span>
           </div>
-          <p className="StyleGuide_heading_font" style={style.getHxFontStyle()}>
+          <p className="StyleGuide_heading_font" style={styles.hxFontStyle}>
             The quick brown fox . . .
           </p>
           <div className="StyleGuide_text_font_details">
@@ -71,7 +69,7 @@ const StyleGuide: React.FC<Props> = props => {
             <span>Size: {textFontSize}</span>
             <span>Weight: {textFontWeight}</span>
           </div>
-          <p className="StyleGuide_text_font" style={style.getTextFontStyle()}>
+          <p className="StyleGuide_text_font" style={styles.textFontStyle}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua.
           </p>
