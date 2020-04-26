@@ -8,7 +8,9 @@ const Selector: React.FC<Props> = props => {
   const { selected, changeSelected } = props;
 
   const handleChangeComplete = (e: React.MouseEvent<HTMLLIElement>) => {
-    changeSelected(e.currentTarget.dataset.id);
+    const target = e.currentTarget.dataset.id;
+    if (selected === target) changeSelected(null);
+    else changeSelected(e.currentTarget.dataset.id);
   };
 
   return (
