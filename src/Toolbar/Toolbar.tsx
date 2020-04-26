@@ -7,12 +7,10 @@ import FontPicker from './FontPicker/FontPicker';
 import FontSizePicker from './FontSizePicker/FontSizePicker';
 import FontWeightPicker from './FontWeightPicker/FontWeightPicker';
 import './Toolbar.css';
-import { changeHxFont } from '../store/action';
 
 const Toolbar: React.FC<Props> = props => {
   const {
     selected,
-    changeSelected,
     headerBGColor,
     emphasisColor,
     emphasisComplimentColor,
@@ -26,10 +24,7 @@ const Toolbar: React.FC<Props> = props => {
     changeBGColor,
     changeLogoColor,
     changeHxColor,
-    changeTextColor,
-    changeLogoFont,
-    changeHxFont,
-    changeTextFont
+    changeTextColor
   } = props;
 
   const initialColors = [
@@ -48,7 +43,6 @@ const Toolbar: React.FC<Props> = props => {
     rgb: { r: 255, g: 255, b: 255, a: 1 },
     hsl: { h: 0, s: 0, l: 1, a: 1 }
   });
-  const [selectedFont, setSelectedFont] = useState<string>('Roboto, sans-serif');
   const [showToolbar, setShowToolbar] = useState<boolean>(false);
 
   useEffect(() => {

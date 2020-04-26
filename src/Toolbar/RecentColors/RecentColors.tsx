@@ -19,7 +19,7 @@ const RecentColors: React.FC<IRecentColors> = props => {
     let colorBoxes = [];
     for (let i = colors.length - 1; i >= 0; i--) {
       colorBoxes.push(
-        <li onClick={() => handleChangeComplete(colors[i])}>
+        <li key={i} onClick={() => handleChangeComplete(colors[i])}>
           <div style={{ ...styles.colorBoxStyle, backgroundColor: colorResultToRgbaString(colors[i]) }} />
         </li>
       );

@@ -4,7 +4,7 @@ import { colorResultToRgbaString } from './colorConvert';
 import store from './store/store';
 import { VisualizerState } from './store/types';
 
-interface iStyle {
+interface iStyles {
   headerBGColorStyle: Properties;
   emphasisColorStyle: Properties;
   emphasisComplimentColorStyle: Properties;
@@ -16,36 +16,79 @@ interface iStyle {
   hxFontStyle: Properties;
   textFontStyle: Properties;
   selectedOutline: Properties;
+  headerStyles: Properties;
+  emphasisButtonStyle: Properties;
+  logoStyles: Properties;
+  mainStyle: Properties;
+  hxStyle: Properties;
+  textStyle: Properties;
 }
 
 const getStylesObj = (state: VisualizerState) => {
-  const stylesObj: iStyle = {
+  const {
+    logoFont,
+    logoFontSize,
+    logoFontWeight,
+    hxFont,
+    hxFontSize,
+    hxFontWeight,
+    textFont,
+    textFontSize,
+    textFontWeight
+  } = state;
+  const headerBGColor = colorResultToRgbaString(state.headerBGColor);
+  const emphasisColor = colorResultToRgbaString(state.emphasisColor);
+  const emphasisComplimentColor = colorResultToRgbaString(state.emphasisComplimentColor);
+  const bgColor = colorResultToRgbaString(state.bgColor);
+  const logoColor = colorResultToRgbaString(state.logoColor);
+  const hxColor = colorResultToRgbaString(state.hxColor);
+  const textColor = colorResultToRgbaString(state.textColor);
+
+  const logoFontStyle = {
+    fontFamily: logoFont,
+    fontSize: logoFontSize,
+    fontWeight: logoFontWeight
+  };
+
+  const hxFontStyle = {
+    fontFamily: hxFont,
+    fontSize: hxFontSize,
+    fontWeight: hxFontWeight
+  };
+
+  const textFontStyle = {
+    fontFamily: textFont,
+    fontSize: textFontSize,
+    fontWeight: textFontWeight
+  };
+
+  const stylesObj: iStyles = {
     headerBGColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.headerBGColor)
+      backgroundColor: headerBGColor
     },
 
     emphasisColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.emphasisColor)
+      backgroundColor: emphasisColor
     },
 
     emphasisComplimentColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.emphasisComplimentColor)
+      backgroundColor: emphasisComplimentColor
     },
 
     bgColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.bgColor)
+      backgroundColor: bgColor
     },
 
     logoColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.logoColor)
+      backgroundColor: logoColor
     },
 
     hxColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.hxColor)
+      backgroundColor: hxColor
     },
 
     textColorStyle: {
-      backgroundColor: colorResultToRgbaString(state.textColor)
+      backgroundColor: textColor
     },
 
     colorBoxStyle: {
@@ -56,19 +99,43 @@ const getStylesObj = (state: VisualizerState) => {
     },
 
     hxFontStyle: {
-      fontFamily: state.hxFont,
-      fontSize: state.hxFontSize,
-      fontWeight: state.hxFontWeight
+      ...hxFontStyle
     },
 
     textFontStyle: {
-      fontFamily: state.textFont,
-      fontSize: state.textFontSize,
-      fontWeight: state.textFontWeight
+      ...textFontStyle
     },
 
     selectedOutline: {
       outline: '5px auto -webkit-focus-ring-color'
+    },
+
+    headerStyles: {
+      backgroundColor: colorResultToRgbaString(state.headerBGColor)
+    },
+
+    emphasisButtonStyle: {
+      color: emphasisComplimentColor,
+      backgroundColor: emphasisColor
+    },
+
+    logoStyles: {
+      color: logoColor,
+      ...logoFontStyle
+    },
+
+    mainStyle: {
+      backgroundColor: bgColor
+    },
+
+    hxStyle: {
+      color: colorResultToRgbaString(state.hxColor),
+      ...hxFontStyle
+    },
+
+    textStyle: {
+      color: colorResultToRgbaString(state.textColor),
+      ...textFontStyle
     }
   };
 
@@ -77,9 +144,8 @@ const getStylesObj = (state: VisualizerState) => {
 
 export function useStyles() {
   const state = store.getState();
-  const [styles, setStyles] = useState<iStyle>(getStylesObj(state));
+  const [styles, setStyles] = useState<iStyles>(getStylesObj(state));
   useEffect(() => {
-    console.log(state.bgColor);
     setStyles(getStylesObj(state));
   }, [state]);
 

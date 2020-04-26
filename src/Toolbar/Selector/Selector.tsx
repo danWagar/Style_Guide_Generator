@@ -1,7 +1,6 @@
 import React from 'react';
 import { Props, connector } from '../../reduxInterface';
 import { useStyles } from '../../useStyles';
-import CSS from 'csstype';
 import './Selector.css';
 
 const Selector: React.FC<Props> = props => {

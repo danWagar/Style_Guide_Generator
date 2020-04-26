@@ -1,39 +1,14 @@
 import React, { useState } from 'react';
 import { Props, connector } from '../../reduxInterface';
 import Input from '../Input/Input';
-import { colorResultToRgbaString } from '../../colorConvert';
 import { useStyles } from '../../useStyles';
-import CSS from 'csstype';
 import './Header.css';
 
 const Header: React.FC<Props> = props => {
-  const {
-    selected,
-    headerBGColor,
-    emphasisColor,
-    emphasisComplimentColor,
-    logoFont,
-    logoFontSize,
-    logoColor,
-    logoText,
-    changeLogoText
-  } = props;
+  const { selected, logoText, changeLogoText } = props;
   const [editLogoText, setEditLogoText] = useState<boolean>(false);
 
   const styles = useStyles();
-
-  const headerStyles: CSS.Properties = {
-    backgroundColor: colorResultToRgbaString(headerBGColor)
-  };
-  const emphasisButtonStyle: CSS.Properties = {
-    color: colorResultToRgbaString(emphasisComplimentColor),
-    backgroundColor: colorResultToRgbaString(emphasisColor)
-  };
-  const logoStyles: CSS.Properties = {
-    color: colorResultToRgbaString(logoColor),
-    fontFamily: logoFont,
-    fontSize: logoFontSize
-  };
 
   const toggleEditLogoText = () => {
     setEditLogoText(!editLogoText);
@@ -45,12 +20,12 @@ const Header: React.FC<Props> = props => {
   };
 
   return (
-    <header className="Header" style={headerStyles}>
+    <header className="Header" style={styles.headerStyles}>
       <div className="Header_logo_containter" onClick={handleLogoClick}>
         {!editLogoText ? (
           <h1
             className="Header_logo_text"
-            style={{ ...logoStyles, ...(selected === 'Logo' && { ...styles.selectedOutline }) }}
+            style={{ ...styles.logoStyles, ...(selected === 'Logo' && { ...styles.selectedOutline }) }}
           >
             {logoText}
           </h1>
@@ -65,7 +40,7 @@ const Header: React.FC<Props> = props => {
       </div>
       <nav className="Header_nav">
         <p className="Header_login">Login</p>
-        <button className="btn" style={emphasisButtonStyle}>
+        <button className="btn" style={styles.emphasisButtonStyle}>
           Sign Up
         </button>
       </nav>
